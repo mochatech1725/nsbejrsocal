@@ -22,7 +22,7 @@
           <q-btn-dropdown flat label="About Us">
             <q-list>
               <q-item clickable v-close-popup :to="{ name: 'about-nsbe' }">
-                <q-item-section>NSBE Goals</q-item-section>
+                <q-item-section>About NSBE</q-item-section>
               </q-item>
               <q-item clickable v-close-popup :to="{ name: 'executive-board' }">
                 <q-item-section>Student Executive Board</q-item-section>
@@ -61,7 +61,7 @@
 
         <q-expansion-item label="About Us" icon="info">
           <q-item clickable :to="{ name: 'about-nsbe' }" v-close-popup>
-            <q-item-section>NSBE Goals</q-item-section>
+            <q-item-section>About NSBE</q-item-section>
           </q-item>
           <q-item clickable :to="{ name: 'executive-board' }" v-close-popup>
             <q-item-section>Student Executive Board</q-item-section>
@@ -239,6 +239,35 @@ export default {
 
 .desktop-menu .q-btn.router-link-active::after {
   width: 80%;
+}
+
+/* Dropdown Menu Styling */
+.desktop-menu .q-list {
+  min-width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-menu .q-item {
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+  color: #2C3E50 !important;
+}
+
+.desktop-menu .q-item:hover {
+  background: linear-gradient(135deg, #f0f7f1 0%, #e8f5e9 100%);
+  padding-left: 24px;
+}
+
+.desktop-menu .q-item-section {
+  color: #2C3E50 !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.desktop-menu .q-item .q-item-label {
+  color: #2C3E50 !important;
 }
 
 /* Responsive adjustments */

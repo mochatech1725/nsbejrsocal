@@ -1,6 +1,6 @@
 <template>
   <q-card flat bordered>
-    <q-card-section class="events-header">
+    <q-card-section class="card-header">
       <div class="text-h5">Upcoming Events</div>
     </q-card-section>
     <q-separator />
@@ -90,17 +90,6 @@ export default {
 }
 </script>
 <style scoped>
-.events-header {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
-  border-bottom: 3px solid #388E3C;
-}
-
-.events-header .text-h5 {
-  font-family: 'Raleway', sans-serif;
-  color: #388E3C;
-  font-weight: 600;
-}
-
 .events-scroll-container {
   overflow-y: auto;
 }

@@ -31,7 +31,7 @@
         <div class="row q-col-gutter-md q-mb-lg">
           <div class="col-12 col-md-6">
             <q-card flat bordered class="mission-vision-card">
-              <q-card-section class="bg-primary text-white text-center q-py-sm">
+              <q-card-section class="card-header text-center q-py-md">
                 <div class="text-h6">Our Mission</div>
               </q-card-section>
               <q-card-section class="q-pa-md">
@@ -44,7 +44,7 @@
           </div>
           <div class="col-12 col-md-6">
             <q-card flat bordered class="mission-vision-card">
-              <q-card-section class="bg-primary text-white text-center q-py-sm">
+              <q-card-section class="card-header text-center q-py-md">
                 <div class="text-h6">Our Vision</div>
               </q-card-section>
               <q-card-section class="q-pa-md">
@@ -53,6 +53,22 @@
                   all Black students can envision themselves as engineers. In this world, Blacks exceed parity in
                   entering engineering fields, earning degrees, and succeeding professionally.
                 </p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+
+        <!-- NSBE Regions Card -->
+        <div class="row justify-center q-mb-lg">
+          <div class="col-12 col-md-10">
+            <q-card flat bordered class="regions-card">
+              <q-card-section class="card-header text-center q-py-md">
+                <div class="text-h6">NSBE Regions</div>
+              </q-card-section>
+              <q-card-section class="q-pa-md">
+                <div class="text-center">
+                  <img src="@/assets/images/nsbe-regions.png" alt="NSBE Regions Map" class="regions-image" />
+                </div>
               </q-card-section>
             </q-card>
           </div>
@@ -95,7 +111,20 @@ export default {
   text-align: center;
 }
 
-.mission-vision-card .text-h6 {
-  font-family: 'Raleway', sans-serif;
+.regions-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.regions-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.regions-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Removed - now using global .card-header class */
 </style>

@@ -46,6 +46,29 @@
 }
 
 /* ===================================
+   Card Header Styling
+   =================================== */
+
+/**
+ * .card-header
+ *
+ * Reusable card header style matching News/Events components.
+ * Grey gradient background with green border accent.
+ */
+.card-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
+  border-bottom: 3px solid #388E3C;
+}
+
+.card-header .text-h5,
+.card-header .text-h6 {
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ===================================
    Additional Global Classes
    =================================== */
 
