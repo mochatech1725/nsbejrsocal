@@ -28,6 +28,34 @@ export type NsbeEvent = {
   color: string;
 }
 
+export type GalleryItem = {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  thumbnail: string;
+  fullsize: string;
+}
+
+export type GalleryPhoto = {
+  id: string;
+  thumbnail: string;
+  fullsize: string;
+  title: string;
+  date: string;
+  description?: string;
+}
+
+export type GalleryAlbum = {
+  id: string;
+  title: string;
+  date: string;
+  photoCount: number;
+  coverImage: string;
+  photos: GalleryPhoto[];
+}
+
 /**
  * Abstract CMS Manager Service
  *
@@ -80,5 +108,31 @@ export abstract class CmsManagerService {
    * @returns Promise resolving to an array of events
    */
   abstract getEventsByDate(date: string): Promise<NsbeEvent[]>;
+
+  /**
+   * Get all gallery items
+   * @returns Promise resolving to an array of gallery items
+   */
+  abstract getGalleryItems(): Promise<GalleryItem[]>;
+
+  /**
+   * Get gallery items by category
+   * @param category - The category to filter by
+   * @returns Promise resolving to an array of gallery items
+   */
+  abstract getGalleryItemsByCategory(category: string): Promise<GalleryItem[]>;
+
+  /**
+   * Get all meeting albums
+   * @returns Promise resolving to an array of meeting albums
+   */
+  abstract getMeetingAlbums(): Promise<GalleryAlbum[]>;
+
+  /**
+   * Get a specific album by ID
+   * @param id - The album ID
+   * @returns Promise resolving to an album or null if not found
+   */
+  abstract getAlbumById(id: string): Promise<GalleryAlbum | null>;
 }
 

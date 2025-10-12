@@ -5,7 +5,7 @@
  * This allows for easy testing and development without needing a real CMS backend.
  */
 
-import { CmsManagerService, NewsItem, NsbeEvent } from '../CmsManagerService';
+import { CmsManagerService, NewsItem, NsbeEvent, GalleryItem, GalleryAlbum } from '../CmsManagerService';
 
 // Mock News Data
 const mockNewsItems: NewsItem[] = [
@@ -153,6 +153,63 @@ const mockEvents: NsbeEvent[] = [
   }
 ];
 
+// Mock Gallery Items Data
+// Empty for now - add events and competitions photos here as needed
+const mockGalleryItems: GalleryItem[] = [];
+
+// Mock Meeting Albums Data
+const mockMeetingAlbums: GalleryAlbum[] = [
+  {
+    id: 'album-1',
+    title: 'October General Meeting',
+    date: 'October 05, 2025',
+    photoCount: 5,
+    coverImage: '/src/assets/images/IMG_3927.png',
+    photos: [
+      {
+        id: 'photo-1',
+        thumbnail: '/src/assets/images/IMG_3927.png',
+        fullsize: '/src/assets/images/IMG_3927.png',
+        title: 'Team Activity',
+        date: 'October 15, 2025',
+        description: 'Chapter members at the meeting'
+      },
+      {
+        id: 'photo-2',
+        thumbnail: '/src/assets/images/IMG_3930.png',
+        fullsize: '/src/assets/images/IMG_3930.png',
+        title: 'Team Activity',
+        date: 'October 15, 2025',
+        description: 'Members collaborating on a project'
+      },
+      {
+        id: 'photo-3',
+        thumbnail: '/src/assets/images/IMG_3935.png',
+        fullsize: '/src/assets/images/IMG_3935.png',
+        title: 'Team Activity',
+        date: 'October 15, 2025',
+        description: 'Members collaborating on a project'
+      },
+      {
+        id: 'photo-4',
+        thumbnail: '/src/assets/images/IMG_3936.png',
+        fullsize: '/src/assets/images/IMG_3936.png',
+        title: 'Team Activity',
+        date: 'October 15, 2025',
+        description: 'Members collaborating on a project'
+      },
+      {
+        id: 'photo-5',
+        thumbnail: '/src/assets/images/IMG_3939.png',
+        fullsize: '/src/assets/images/IMG_3939.png',
+        title: 'Team Activity',
+        date: 'October 15, 2025',
+        description: 'Members collaborating on a project'
+      }
+    ]
+  }
+];
+
 export class MockCmsManagerService extends CmsManagerService {
   /**
    * Simulate async API call delay
@@ -207,6 +264,26 @@ export class MockCmsManagerService extends CmsManagerService {
   async getEventsByDate(date: string): Promise<NsbeEvent[]> {
     await this.simulateDelay();
     return mockEvents.filter(event => event.date === date);
+  }
+
+  async getGalleryItems(): Promise<GalleryItem[]> {
+    await this.simulateDelay();
+    return [...mockGalleryItems];
+  }
+
+  async getGalleryItemsByCategory(category: string): Promise<GalleryItem[]> {
+    await this.simulateDelay();
+    return mockGalleryItems.filter(item => item.category === category);
+  }
+
+  async getMeetingAlbums(): Promise<GalleryAlbum[]> {
+    await this.simulateDelay();
+    return [...mockMeetingAlbums];
+  }
+
+  async getAlbumById(id: string): Promise<GalleryAlbum | null> {
+    await this.simulateDelay();
+    return mockMeetingAlbums.find(album => album.id === id) || null;
   }
 }
 
