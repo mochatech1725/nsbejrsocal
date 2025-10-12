@@ -10,14 +10,7 @@
         <q-expansion-item v-if="generalEvents.length > 0" default-opened expand-separator icon="event"
           label="General Events" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="event in generalEvents" :key="event.id">
-              <q-item-section>
-                <q-item-label class="text-h6">{{ event.title }}</q-item-label>
-                <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
-                <q-item-label caption>{{ event.location }}</q-item-label>
-                <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
-              </q-item-section>
-            </q-item>
+            <EventItem v-for="event in generalEvents" :key="event.id" :event="event" />
           </q-list>
         </q-expansion-item>
 
@@ -25,14 +18,7 @@
         <q-expansion-item v-if="conferences.length > 0" default-opened expand-separator icon="school"
           label="Conferences" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="event in conferences" :key="event.id">
-              <q-item-section>
-                <q-item-label class="text-h6">{{ event.title }}</q-item-label>
-                <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
-                <q-item-label caption>{{ event.location }}</q-item-label>
-                <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
-              </q-item-section>
-            </q-item>
+            <EventItem v-for="event in conferences" :key="event.id" :event="event" />
           </q-list>
         </q-expansion-item>
 
@@ -40,14 +26,7 @@
         <q-expansion-item v-if="competitions.length > 0" default-opened expand-separator icon="emoji_events"
           label="Competitions" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="event in competitions" :key="event.id">
-              <q-item-section>
-                <q-item-label class="text-h6">{{ event.title }}</q-item-label>
-                <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
-                <q-item-label caption>{{ event.location }}</q-item-label>
-                <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
-              </q-item-section>
-            </q-item>
+            <EventItem v-for="event in competitions" :key="event.id" :event="event" />
           </q-list>
         </q-expansion-item>
 
@@ -55,14 +34,7 @@
         <q-expansion-item v-if="monthlyMeetings.length > 0" default-opened expand-separator icon="groups"
           label="Monthly Meetings" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="event in monthlyMeetings" :key="event.id">
-              <q-item-section>
-                <q-item-label class="text-h6">{{ event.title }}</q-item-label>
-                <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
-                <q-item-label caption>{{ event.location }}</q-item-label>
-                <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
-              </q-item-section>
-            </q-item>
+            <EventItem v-for="event in monthlyMeetings" :key="event.id" :event="event" />
           </q-list>
         </q-expansion-item>
       </q-list>
@@ -72,9 +44,13 @@
 
 <script>
 import { computed } from 'vue'
+import EventItem from './EventItem.vue'
 
 export default {
   name: 'EventsComponent',
+  components: {
+    EventItem
+  },
   props: {
     events: {
       type: Array,

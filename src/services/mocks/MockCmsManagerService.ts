@@ -6,6 +6,8 @@
  */
 
 import { CmsManagerService, NewsItem, NsbeEvent, GalleryItem, GalleryAlbum, NewsCategory, EventCategory } from '../CmsManagerService';
+// @ts-ignore - JSON import
+import eventsData from '../../data/events.json';
 
 // Mock News Data
 const mockNewsItems: NewsItem[] = [
@@ -121,153 +123,60 @@ const mockNewsItems: NewsItem[] = [
   }
 ];
 
-// Mock Events Data
-const mockEvents: NsbeEvent[] = [
-  {
-    id: 'event-1',
-    title: 'Monthly General Meeting',
-    description: 'Join us for our monthly chapter meeting where we discuss upcoming events, projects, and opportunities.',
-    date: '2025-10-20',
-    dateFormatted: 'Sunday, October 20, 2025',
-    time: '2:00 PM - 4:00 PM',
-    location: 'Community Center - Room 203',
-    icon: 'groups',
-    color: 'primary',
-    category: 'monthly'
-  },
-  {
-    id: 'event-2',
-    title: 'Robotics Workshop',
-    description: 'Learn the basics of robotics programming and build your own robot. All materials provided. Perfect for beginners!',
-    date: '2025-10-25',
-    dateFormatted: 'Friday, October 25, 2025',
-    time: '4:30 PM - 6:30 PM',
-    location: 'STEM Lab - Building A',
-    icon: 'precision_manufacturing',
-    color: 'secondary',
-    category: 'general'
-  },
-  {
-    id: 'event-3',
-    title: 'Region VI Fall Leadership Conference',
-    description: 'Join us for the regional leadership conference featuring workshops, networking, and keynote speakers.',
-    date: '2025-11-02',
-    dateFormatted: 'Saturday, November 2, 2025',
-    time: '9:00 AM - 5:00 PM',
-    location: 'Convention Center',
-    icon: 'school',
-    color: 'accent',
-    category: 'conference'
-  },
-  {
-    id: 'event-4',
-    title: 'Coding Competition',
-    description: 'Test your programming skills in our annual coding competition. Prizes for top performers in each category.',
-    date: '2025-11-08',
-    dateFormatted: 'Friday, November 8, 2025',
-    time: '5:00 PM - 8:00 PM',
-    location: 'Technology Center - Computer Lab 1',
-    icon: 'code',
-    color: 'positive',
-    category: 'competition'
-  },
-  {
-    id: 'event-5',
-    title: 'Engineering Design Challenge',
-    description: 'Work in teams to solve a real-world engineering problem. Showcase your creativity and technical skills!',
-    date: '2025-11-15',
-    dateFormatted: 'Friday, November 15, 2025',
-    time: '3:30 PM - 6:00 PM',
-    location: 'Engineering Workshop - Maker Space',
-    icon: 'engineering',
-    color: 'warning',
-    category: 'competition'
-  },
-  {
-    id: 'event-6',
-    title: 'Leadership Development Workshop',
-    description: 'Special workshop focused on developing leadership skills and team management.',
-    date: '2025-11-18',
-    dateFormatted: 'Monday, November 18, 2025',
-    time: '6:00 PM - 7:30 PM',
-    location: 'Community Center - Room 203',
-    icon: 'groups',
-    color: 'primary',
-    category: 'general'
-  },
-  {
-    id: 'event-7',
-    title: 'NSBE National Convention',
-    description: 'Annual national convention bringing together NSBE Jr. chapters from across the country.',
-    date: '2025-11-20',
-    dateFormatted: 'Wednesday, November 20, 2025',
-    time: 'All Day',
-    location: 'Los Angeles Convention Center',
-    icon: 'celebration',
-    color: 'accent',
-    category: 'conference'
-  },
-  {
-    id: 'event-8',
-    title: 'Regional Robotics Competition',
-    description: 'Compete against other chapters in the regional robotics challenge. Demonstrate your robot\'s capabilities!',
-    date: '2025-11-22',
-    dateFormatted: 'Friday, November 22, 2025',
-    time: '10:00 AM - 4:00 PM',
-    location: 'High School Gymnasium',
-    icon: 'emoji_events',
-    color: 'positive',
-    category: 'competition'
-  },
-  {
-    id: 'event-9',
-    title: 'Monthly Chapter Meeting - November',
-    description: 'Join us for our monthly chapter meeting where we discuss upcoming events, projects, and opportunities.',
-    date: '2025-11-24',
-    dateFormatted: 'Monday, November 24, 2025',
-    time: '2:00 PM - 4:00 PM',
-    location: 'Community Center - Room 203',
-    icon: 'groups',
-    color: 'primary',
-    category: 'monthly'
-  },
-  {
-    id: 'event-10',
-    title: 'Community STEM Fair',
-    description: 'Showcase your projects to the community! Demonstrate experiments, display your work, and inspire others.',
-    date: '2025-11-28',
-    dateFormatted: 'Friday, November 28, 2025',
-    time: '12:00 PM - 5:00 PM',
-    location: 'City Park - Main Pavilion',
-    icon: 'science',
-    color: 'primary',
-    category: 'general'
-  },
-  {
-    id: 'event-11',
-    title: 'Holiday Social & Awards',
-    description: 'Celebrate the year\'s achievements with food, fun, and our annual awards ceremony. Family and friends welcome!',
-    date: '2025-12-10',
-    dateFormatted: 'Tuesday, December 10, 2025',
-    time: '6:00 PM - 9:00 PM',
-    location: 'Community Center - Main Hall',
-    icon: 'celebration',
-    color: 'secondary',
-    category: 'general'
-  },
-  {
-    id: 'event-12',
-    title: 'Monthly Chapter Meeting - December',
-    description: 'Join us for our final monthly chapter meeting of the year. Year-end review and planning for next year.',
-    date: '2025-12-15',
-    dateFormatted: 'Monday, December 15, 2025',
-    time: '2:00 PM - 4:00 PM',
-    location: 'Community Center - Room 203',
-    icon: 'groups',
-    color: 'primary',
-    category: 'monthly'
-  }
-];
+// Transform events from JSON to NsbeEvent format
+function transformEvents(): NsbeEvent[] {
+  const events: NsbeEvent[] = [];
+
+  (eventsData.events as any[]).forEach((event) => {
+    const category = (event.category || 'monthly') as EventCategory;
+
+    // Base event structure
+    const nsbeEvent: NsbeEvent = {
+      id: event.id,
+      title: event.title,
+      description: event.description,
+      date: new Date(event.date + 'T00:00:00'),
+      icon: event.icon || getCategoryIcon(category),
+      color: event.color || getCategoryColor(category),
+      category
+    };
+
+    // Add event fields
+    nsbeEvent.startTime = event.startTime;
+    nsbeEvent.endTime = event.endTime;
+    nsbeEvent.location = event.location;
+    nsbeEvent.address = event.address;
+
+    events.push(nsbeEvent);
+  });
+
+  return events;
+}
+
+// Helper function to get default icon by category
+function getCategoryIcon(category: EventCategory): string {
+  const icons: Record<EventCategory, string> = {
+    monthly: 'groups',
+    general: 'event',
+    conference: 'school',
+    competition: 'emoji_events'
+  };
+  return icons[category] || 'event';
+}
+
+// Helper function to get default color by category
+function getCategoryColor(category: EventCategory): string {
+  const colors: Record<EventCategory, string> = {
+    monthly: 'primary',
+    general: 'primary',
+    conference: 'accent',
+    competition: 'positive'
+  };
+  return colors[category] || 'primary';
+}
+
+// Mock Events Data loaded from events.json
+const mockEvents: NsbeEvent[] = transformEvents();
 
 // Mock Gallery Items Data
 // Empty for now - add events and competitions photos here as needed
@@ -379,15 +288,20 @@ export class MockCmsManagerService extends CmsManagerService {
     today.setHours(0, 0, 0, 0);
 
     const upcoming = mockEvents
-      .filter(event => new Date(event.date + 'T00:00:00') >= today)
-      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      .filter(event => event.date >= today)
+      .sort((a, b) => a.date.getTime() - b.date.getTime());
 
     return limit ? upcoming.slice(0, limit) : upcoming;
   }
 
   async getEventsByDate(date: string): Promise<NsbeEvent[]> {
     await this.simulateDelay();
-    return mockEvents.filter(event => event.date === date);
+    const searchDate = new Date(date + 'T00:00:00');
+    return mockEvents.filter(event =>
+      event.date.getFullYear() === searchDate.getFullYear() &&
+      event.date.getMonth() === searchDate.getMonth() &&
+      event.date.getDate() === searchDate.getDate()
+    );
   }
 
   async getEventsByCategory(category: EventCategory, limit?: number): Promise<NsbeEvent[]> {
@@ -396,8 +310,8 @@ export class MockCmsManagerService extends CmsManagerService {
     today.setHours(0, 0, 0, 0);
 
     const filtered = mockEvents
-      .filter(event => event.category === category && new Date(event.date + 'T00:00:00') >= today)
-      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      .filter(event => event.category === category && event.date >= today)
+      .sort((a, b) => a.date.getTime() - b.date.getTime());
 
     return limit ? filtered.slice(0, limit) : filtered;
   }

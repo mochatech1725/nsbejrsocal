@@ -23,12 +23,13 @@ export type NewsItem = {
 
 export type NsbeEvent = {
   id: string;
-  title: string;
+  title?: string;
   description: string;
-  date: string; // ISO date string (YYYY-MM-DD)
-  dateFormatted: string;
-  time: string;
-  location: string;
+  date: Date; // Date object
+  startTime?: string;
+  endTime?: string;
+  location?: string;
+  address?: string;
   icon: string;
   color: string;
   category: EventCategory;
