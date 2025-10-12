@@ -30,8 +30,8 @@ export default {
     const loading = ref(true)
 
     const categories = ref([
-      { label: 'Events', value: 'events' },
       { label: 'Meetings', value: 'meetings' },
+      { label: 'Events', value: 'events' },
       { label: 'Competitions', value: 'competitions' }
     ])
 

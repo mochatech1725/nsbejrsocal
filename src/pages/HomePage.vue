@@ -11,9 +11,37 @@
           </div>
         </div>
 
-        <!-- News Section -->
-        <div v-else>
-          <NewsComponent :news-items="newsItems" max-height="500px" />
+        <!-- Two Column Layout -->
+        <div v-else class="row q-col-gutter-lg">
+          <!-- Left Column - News -->
+          <div class="col-12 col-md-6">
+            <NewsComponent :news-items="newsItems" max-height="500px" />
+          </div>
+
+          <!-- Right Column - Events List -->
+          <div class="col-12 col-md-6">
+            <q-card flat bordered>
+              <q-card-section class="bg-primary text-white">
+                <div class="text-h5">Upcoming Events</div>
+              </q-card-section>
+              <q-separator />
+              <div class="events-scroll-container">
+                <q-list separator>
+                  <q-item v-for="event in upcomingEvents" :key="event.id">
+                    <q-item-section avatar>
+                      <q-icon :name="event.icon" :color="event.color" size="md" />
+                    </q-item-section>
+                    <q-item-section>
+                      <q-item-label class="text-h6">{{ event.title }}</q-item-label>
+                      <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
+                      <q-item-label caption>{{ event.location }}</q-item-label>
+                      <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </div>
+            </q-card>
+          </div>
         </div>
       </div>
     </div>
@@ -32,12 +60,16 @@ export default {
   },
   setup() {
     const newsItems = ref([])
+    const upcomingEvents = ref([])
     const loading = ref(true)
 
     onMounted(async () => {
       try {
         // Fetch news items (limit to 5 most recent)
         newsItems.value = await mockCmsService.getRecentNews(5)
+
+        // Fetch upcoming events (limit to 6 for preview)
+        upcomingEvents.value = await mockCmsService.getUpcomingEvents(6)
       } catch (error) {
         console.error('Failed to load data:', error)
       } finally {
@@ -47,6 +79,7 @@ export default {
 
     return {
       newsItems,
+      upcomingEvents,
       loading
     }
   }
@@ -54,18 +87,28 @@ export default {
 </script>
 
 <style scoped>
-.mission-vision-card {
-  height: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.events-scroll-container {
+  max-height: 480px;
+  /* Adjust this to control how many events show before scrolling (currently ~4 events) */
+  overflow-y: auto;
 }
 
-.mission-vision-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+/* Custom scrollbar styling for events */
+.events-scroll-container::-webkit-scrollbar {
+  width: 8px;
 }
 
-.mission-vision-text {
-  line-height: 1.8;
-  text-align: center;
+.events-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.events-scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.events-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>

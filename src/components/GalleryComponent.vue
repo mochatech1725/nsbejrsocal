@@ -107,14 +107,14 @@ export default {
     categories: {
       type: Array,
       default: () => [
-        { label: 'Events', value: 'events' },
         { label: 'Meetings', value: 'meetings' },
+        { label: 'Events', value: 'events' },
         { label: 'Competitions', value: 'competitions' }
       ]
     }
   },
   setup(props) {
-    const selectedCategory = ref('events')
+    const selectedCategory = ref('meetings')
     const albumDialog = ref(false)
     const selectedAlbum = ref(null)
 
