@@ -1,0 +1,81 @@
+{
+  "main-officers": [
+    {
+      "position": "President",
+      "name": "Tristan Ramella-Paia"
+    },
+    {
+      "position": "Vice-President",
+      "name": "James Burton"
+    },
+    {
+      "position": "Secretary",
+      "name": "Layla Sibert"
+    },
+    {
+      "position": "Treasurer",
+      "name": "Solomon Cannad"
+    }
+  ],
+  "finance-officers": [
+    {
+      "name": "Major Paxton"
+    },
+    {
+      "name": "Ezekiel Niazi"
+    },
+    {
+      "name": "Kassidy Crutchfield"
+    },
+    {
+      "name": "King Solomon Henderson"
+    },
+    {
+      "name": "Akira Jackson"
+    },
+    {
+      "name": "Myles Taylor"
+    },
+    {
+      "name": "Kendall Burnley"
+    },
+    {
+      "name": "Taryn Earl"
+    }
+  ],
+  "committee-chairs": [
+    {
+      "position": "Programs Chair",
+      "name": "Yeshaya Lang"
+    },
+    {
+      "position": "Community Outreach Chair",
+      "name": "Geon Cobb"
+    },
+    {
+      "position": "Socials Chair",
+      "name": "Jillian Dickens"
+    },
+    {
+      "position": "College Prep Chair",
+      "name": "Daniel Lorick"
+    },
+    {
+      "position": "Career Prep Chair",
+      "name": "Avery Favorite"
+    },
+    {
+      "position": "Membership Chair",
+      "name": "Aaron Gitahi"
+    },
+    {
+      "position": "Public Relations Chair",
+      "name": "Rena Daniels"
+    },
+    {
+      "position": "Public Relations Assistant",
+      "name": "Meony Armstrong"
+    }
+  ]
+}
+

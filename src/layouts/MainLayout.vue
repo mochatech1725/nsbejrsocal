@@ -180,13 +180,12 @@ export default {
 }
 
 .chapter-main-title {
-  font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   color: #2E7D32;
   margin-bottom: 4px;
-  font-style: italic;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 

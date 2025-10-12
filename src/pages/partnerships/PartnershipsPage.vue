@@ -34,8 +34,6 @@
                 Through our partnership, our chapter members gain access to high-quality STEM education
                 resources, engaging learning experiences, and opportunities to develop critical thinking skills.
               </p>
-              <q-btn color="primary" label="Visit PS Science" icon-right="open_in_new" href="https://psscience.org/"
-                target="_blank" rel="noopener noreferrer" unelevated rounded class="q-px-lg" />
             </div>
           </div>
         </div>
