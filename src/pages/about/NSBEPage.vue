@@ -10,15 +10,15 @@
 
         <!-- NSBE Background Section - No Card -->
         <div class="nsbe-background q-mb-xl q-pa-md">
-          <h2 class="text-h4 text-primary q-mb-md text-center">National Society of Black Engineers</h2>
+          <h2 class="text-h5 section-title q-mb-md text-center">National Society of Black Engineers</h2>
           <div class="row justify-center">
-            <div class="col-12 col-md-10">
-              <p class="text-body1 text-grey-8 q-mb-md" style="line-height: 1.8;">
+            <div class="col-12 col-md-9">
+              <p class="text-body2 text-grey-8 q-mb-md" style="line-height: 1.7;">
                 The National Society of Black Engineers (NSBE) is one of the largest student-governed organizations with
                 the aim of increasing the number of culturally responsible Black Engineers who excel academically,
                 succeed professionally and positively impact the community.
               </p>
-              <p class="text-body1 text-grey-8" style="line-height: 1.8;">
+              <p class="text-body2 text-grey-8" style="line-height: 1.7;">
                 Founded in 1975, NSBE now has more than 500 chapters and nearly 16,000 active members in the United
                 States and abroad. NSBE offers its members leadership training, professional development, mentoring
                 opportunities, career placement services and more.
@@ -69,6 +69,12 @@ export default {
 </script>
 
 <style scoped>
+.section-title {
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C;
+  font-weight: 600;
+}
+
 .nsbe-background {
   background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
   border-radius: 8px;
@@ -87,5 +93,9 @@ export default {
 .mission-vision-text {
   line-height: 1.8;
   text-align: center;
+}
+
+.mission-vision-card .text-h6 {
+  font-family: 'Raleway', sans-serif;
 }
 </style>

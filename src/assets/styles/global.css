@@ -17,10 +17,12 @@
  * To change the color of ALL page titles across the site:
  * Simply update the color value below.
  *
- * Current: #1976D2 (Primary Blue)
+ * Current: #388E3C (Green - matches navigation bar)
  */
 .page-title {
-  color: #1976D2;
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C;
+  font-weight: 600;
 }
 
 /* ===================================
@@ -35,10 +37,11 @@
  * To change the color of ALL section headers across the site:
  * Simply update the color value below.
  *
- * Current: #1976D2 (Primary Blue)
+ * Current: #388E3C (Green - matches theme)
  */
 .section-header {
-  color: #1976D2 !important;
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C !important;
   font-weight: 600;
 }
 

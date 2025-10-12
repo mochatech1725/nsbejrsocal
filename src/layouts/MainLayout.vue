@@ -22,7 +22,7 @@
           <q-btn-dropdown flat label="About Us">
             <q-list>
               <q-item clickable v-close-popup :to="{ name: 'about-nsbe' }">
-                <q-item-section>NSBE</q-item-section>
+                <q-item-section>NSBE Goals</q-item-section>
               </q-item>
               <q-item clickable v-close-popup :to="{ name: 'about-membership' }">
                 <q-item-section>Membership</q-item-section>
@@ -61,7 +61,7 @@
 
         <q-expansion-item label="About Us" icon="info">
           <q-item clickable :to="{ name: 'about-nsbe' }" v-close-popup>
-            <q-item-section>NSBE</q-item-section>
+            <q-item-section>NSBE Goals</q-item-section>
           </q-item>
           <q-item clickable :to="{ name: 'about-membership' }" v-close-popup>
             <q-item-section>Membership</q-item-section>

@@ -24,7 +24,7 @@
 
             <!-- Description Section -->
             <div class="partner-description">
-              <h3 class="text-h4 text-primary q-mb-sm" style="font-weight: 700;">PS Science</h3>
+              <h3 class="text-h4 partner-heading q-mb-sm">PS Science</h3>
               <p class="text-body2 text-grey-7 q-mb-sm" style="line-height: 1.7;">
                 PS Science brings hands-on STEM learning to elementary school children. They support classroom teachers
                 and community educators with lessons, materials, and training to ensure all kids have an equal chance
@@ -51,6 +51,12 @@ export default {
 </script>
 
 <style scoped>
+.partner-heading {
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C;
+  font-weight: 700;
+}
+
 .partner-feature {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-radius: 16px;

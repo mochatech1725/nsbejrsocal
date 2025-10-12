@@ -91,7 +91,11 @@ export default {
 </script>
 <style scoped>
 .events-header {
-  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+  background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+}
+
+.events-header .text-h5 {
+  font-family: 'Raleway', sans-serif;
 }
 
 .events-scroll-container {

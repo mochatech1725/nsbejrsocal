@@ -2,8 +2,8 @@
   <div>
     <!-- Gallery Categories with Styled Tabs -->
     <q-card flat bordered class="q-mb-lg">
-      <q-tabs v-model="selectedCategory" dense class="text-grey-7" active-color="primary" indicator-color="primary"
-        align="justify" narrow-indicator>
+      <q-tabs v-model="selectedCategory" dense class="text-grey-7 gallery-tabs" active-color="green-7"
+        indicator-color="green-7" align="justify" narrow-indicator>
         <q-tab v-for="category in categoryOptions" :key="category.value" :name="category.value" :label="category.label"
           :icon="getCategoryIcon(category.value)" no-caps class="tab-item" />
       </q-tabs>
@@ -64,7 +64,7 @@
     <!-- Album Dialog (for viewing album contents) -->
     <q-dialog v-model="albumDialog" maximized>
       <q-card>
-        <q-card-section class="row items-center q-pb-md bg-primary text-white">
+        <q-card-section class="row items-center q-pb-md album-dialog-header text-white">
           <q-icon name="photo_album" size="md" class="q-mr-sm" />
           <div class="text-h6">{{ selectedAlbum?.title }}</div>
           <q-space />
@@ -173,8 +173,16 @@ export default {
 </script>
 
 <style scoped>
+.gallery-tabs {
+  --q-primary: #388E3C;
+}
+
 .tab-item {
   font-weight: 500;
+}
+
+.tab-item.q-tab--active {
+  color: #388E3C;
 }
 
 .gallery-card {
@@ -212,5 +220,17 @@ export default {
 .album-overlay .text-caption {
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.album-overlay .text-h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.album-dialog-header {
+  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+}
+
+.album-dialog-header .text-h6 {
+  font-family: 'Raleway', sans-serif;
 }
 </style>

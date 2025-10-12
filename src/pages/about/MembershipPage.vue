@@ -35,18 +35,6 @@
               </q-card-section>
             </q-card>
           </div>
-          <div class="col-12 col-md-6">
-            <q-card flat bordered>
-              <q-card-section>
-                <div class="text-h6 q-mb-sm">How to Join</div>
-                <p class="text-body2">
-                  Contact us through our Contact page or attend one of our meetings to learn more about membership
-                  opportunities.
-                </p>
-                <q-btn color="primary" label="Contact Us" :to="{ name: 'about-contact' }" class="q-mt-md" />
-              </q-card-section>
-            </q-card>
-          </div>
         </div>
       </div>
     </div>

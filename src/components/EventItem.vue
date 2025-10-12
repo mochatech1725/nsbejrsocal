@@ -36,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.text-h6 {
+  font-family: 'Raleway', sans-serif;
+}
+</style>
