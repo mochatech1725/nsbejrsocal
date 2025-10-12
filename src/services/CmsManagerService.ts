@@ -5,6 +5,10 @@
  * This service provides methods to retrieve news and events data.
  */
 
+// Category Types
+export type NewsCategory = 'general' | 'competition' | 'conferences';
+export type EventCategory = 'monthly' | 'general' | 'conference' | 'competition';
+
 export type NewsItem = {
   id: string;
   title: string;
@@ -14,6 +18,7 @@ export type NewsItem = {
   month: string;
   date: string; // ISO date string (YYYY-MM-DD)
   publishedAt?: Date;
+  category: NewsCategory;
 }
 
 export type NsbeEvent = {
@@ -26,6 +31,7 @@ export type NsbeEvent = {
   location: string;
   icon: string;
   color: string;
+  category: EventCategory;
 }
 
 export type GalleryItem = {
@@ -81,6 +87,14 @@ export abstract class CmsManagerService {
   abstract getRecentNews(limit?: number): Promise<NewsItem[]>;
 
   /**
+   * Get news items by category
+   * @param category - The category to filter by
+   * @param limit - Optional maximum number of items to return
+   * @returns Promise resolving to an array of news items
+   */
+  abstract getNewsByCategory(category: NewsCategory, limit?: number): Promise<NewsItem[]>;
+
+  /**
    * Get all events
    * @returns Promise resolving to an array of events
    */
@@ -106,6 +120,14 @@ export abstract class CmsManagerService {
    * @returns Promise resolving to an array of events
    */
   abstract getEventsByDate(date: string): Promise<NsbeEvent[]>;
+
+  /**
+   * Get events by category
+   * @param category - The category to filter by
+   * @param limit - Optional maximum number of items to return
+   * @returns Promise resolving to an array of events
+   */
+  abstract getEventsByCategory(category: EventCategory, limit?: number): Promise<NsbeEvent[]>;
 
   /**
    * Get all gallery items

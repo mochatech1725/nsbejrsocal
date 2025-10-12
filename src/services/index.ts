@@ -10,7 +10,9 @@ export {
   type NsbeEvent,
   type GalleryItem,
   type GalleryPhoto,
-  type GalleryAlbum
+  type GalleryAlbum,
+  type NewsCategory,
+  type EventCategory
 } from './CmsManagerService';
 export { MockCmsManagerService, mockCmsService } from './mocks/MockCmsManagerService';
 

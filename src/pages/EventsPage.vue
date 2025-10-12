@@ -29,18 +29,78 @@
               </q-card-section>
               <q-separator />
               <div class="events-scroll-container">
-                <q-list separator>
-                  <q-item v-for="event in upcomingEvents" :key="event.id">
-                    <q-item-section avatar>
-                      <q-icon :name="event.icon" :color="event.color" size="md" />
-                    </q-item-section>
-                    <q-item-section>
-                      <q-item-label class="text-h6">{{ event.title }}</q-item-label>
-                      <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
-                      <q-item-label caption>{{ event.location }}</q-item-label>
-                      <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
-                    </q-item-section>
-                  </q-item>
+                <q-list>
+                  <!-- General Events Section -->
+                  <q-expansion-item v-if="generalEvents.length > 0" default-opened expand-separator icon="event"
+                    label="General Events" header-class="bg-grey-3 text-grey-8">
+                    <q-list separator>
+                      <q-item v-for="event in generalEvents" :key="event.id">
+                        <q-item-section avatar>
+                          <q-icon :name="event.icon" :color="event.color" size="md" />
+                        </q-item-section>
+                        <q-item-section>
+                          <q-item-label class="text-h6">{{ event.title }}</q-item-label>
+                          <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
+                          <q-item-label caption>{{ event.location }}</q-item-label>
+                          <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-expansion-item>
+
+                  <!-- Conferences Section -->
+                  <q-expansion-item v-if="conferences.length > 0" default-opened expand-separator icon="school"
+                    label="Conferences" header-class="bg-grey-3 text-grey-8">
+                    <q-list separator>
+                      <q-item v-for="event in conferences" :key="event.id">
+                        <q-item-section avatar>
+                          <q-icon :name="event.icon" :color="event.color" size="md" />
+                        </q-item-section>
+                        <q-item-section>
+                          <q-item-label class="text-h6">{{ event.title }}</q-item-label>
+                          <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
+                          <q-item-label caption>{{ event.location }}</q-item-label>
+                          <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-expansion-item>
+
+                  <!-- Competitions Section -->
+                  <q-expansion-item v-if="competitions.length > 0" default-opened expand-separator icon="emoji_events"
+                    label="Competitions" header-class="bg-grey-3 text-grey-8">
+                    <q-list separator>
+                      <q-item v-for="event in competitions" :key="event.id">
+                        <q-item-section avatar>
+                          <q-icon :name="event.icon" :color="event.color" size="md" />
+                        </q-item-section>
+                        <q-item-section>
+                          <q-item-label class="text-h6">{{ event.title }}</q-item-label>
+                          <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
+                          <q-item-label caption>{{ event.location }}</q-item-label>
+                          <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-expansion-item>
+
+                  <!-- Monthly Meetings Section (at the end) -->
+                  <q-expansion-item v-if="monthlyMeetings.length > 0" default-opened expand-separator icon="groups"
+                    label="Monthly Meetings" header-class="bg-grey-3 text-grey-8">
+                    <q-list separator>
+                      <q-item v-for="event in monthlyMeetings" :key="event.id">
+                        <q-item-section avatar>
+                          <q-icon :name="event.icon" :color="event.color" size="md" />
+                        </q-item-section>
+                        <q-item-section>
+                          <q-item-label class="text-h6">{{ event.title }}</q-item-label>
+                          <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
+                          <q-item-label caption>{{ event.location }}</q-item-label>
+                          <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-expansion-item>
                 </q-list>
               </div>
             </q-card>
@@ -66,10 +126,27 @@ export default {
     const upcomingEvents = ref([])
     const loading = ref(true)
 
+    // Group events by category
+    const monthlyMeetings = computed(() =>
+      upcomingEvents.value.filter(event => event.category === 'monthly')
+    )
+
+    const generalEvents = computed(() =>
+      upcomingEvents.value.filter(event => event.category === 'general')
+    )
+
+    const conferences = computed(() =>
+      upcomingEvents.value.filter(event => event.category === 'conference')
+    )
+
+    const competitions = computed(() =>
+      upcomingEvents.value.filter(event => event.category === 'competition')
+    )
+
     onMounted(async () => {
       try {
-        // Fetch news items from CMS
-        newsItems.value = await mockCmsService.getRecentNews(5)
+        // Fetch news items from CMS (get more to show all categories)
+        newsItems.value = await mockCmsService.getRecentNews(10)
 
         // Fetch upcoming events from CMS
         upcomingEvents.value = await mockCmsService.getUpcomingEvents()
@@ -83,6 +160,10 @@ export default {
     return {
       newsItems,
       upcomingEvents,
+      monthlyMeetings,
+      generalEvents,
+      conferences,
+      competitions,
       loading
     }
   }
