@@ -5,14 +5,16 @@
 
         <!-- Introduction Section -->
         <div class="intro-section q-mb-lg">
-          <div class="intro-border">
-            <p class="intro-text">
-              Membership in NSBE Jr. is open to students interested in STEM fields. As a member, you'll have access to
-              academic support and tutoring, leadership development programs, community service opportunities, STEM
-              competitions and challenges,
-              networking with professionals in engineering fields, and college preparation resources.
-            </p>
-          </div>
+          <q-card bordered class="intro-card">
+            <q-card-section class="q-pa-lg text-center">
+              <p class="intro-text">
+                Membership in NSBE Jr. is open to students interested in STEM fields. As a member, you'll have access to
+                academic support and tutoring, leadership development programs, community service opportunities,
+                STEM competitions and challenges,
+                networking with professionals in engineering fields, and college preparation resources.
+              </p>
+            </q-card-section>
+          </q-card>
         </div>
 
         <!-- Loading State -->
@@ -86,33 +88,21 @@ export default {
   justify-content: center;
 }
 
-.intro-border {
-  max-width: 850px;
-  padding: 24px 32px;
-  border: 3px solid #388E3C;
+.intro-card {
+  max-width: 900px;
+  background: #ffffff;
   border-radius: 12px;
-  background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);
-  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.15);
-  position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
-.intro-border::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
-  z-index: -1;
+.intro-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .intro-text {
   margin: 0;
-  text-align: center;
-  color: #424242;
-  line-height: 1.8;
+  color: #555;
+  line-height: 1.9;
   font-size: 1.05rem;
 }
 </style>
