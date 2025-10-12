@@ -2,114 +2,116 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 page-title q-mb-md">Events Calendar</h1>
+        <h1 class="text-h3 page-title q-mb-md text-center">News & Events</h1>
 
-        <p class="text-body1 q-mb-lg">
-          Stay up to date with all our chapter events, meetings, and activities.
+        <p class="text-body1 q-mb-lg text-center">
+          Stay up to date with all our chapter news, events, meetings, and activities.
         </p>
 
-        <!-- Events Calendar Component -->
-        <EventsComponent :events="events" :show-upcoming-list="true" />
+        <!-- Loading State -->
+        <div v-if="loading" class="text-center q-py-xl">
+          <q-spinner-dots color="primary" size="50px" />
+          <div class="text-grey-6 q-mt-md">Loading content...</div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div v-else class="row q-col-gutter-lg">
+          <!-- Left Column - News -->
+          <div class="col-12 col-md-6">
+            <NewsComponent :news-items="newsItems" max-height="600px" />
+          </div>
+
+          <!-- Right Column - Events List -->
+          <div class="col-12 col-md-6">
+            <q-card flat bordered>
+              <q-card-section class="bg-primary text-white">
+                <div class="text-h5">Upcoming Events</div>
+              </q-card-section>
+              <q-separator />
+              <div class="events-scroll-container">
+                <q-list separator>
+                  <q-item v-for="event in upcomingEvents" :key="event.id">
+                    <q-item-section avatar>
+                      <q-icon :name="event.icon" :color="event.color" size="md" />
+                    </q-item-section>
+                    <q-item-section>
+                      <q-item-label class="text-h6">{{ event.title }}</q-item-label>
+                      <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
+                      <q-item-label caption>{{ event.location }}</q-item-label>
+                      <q-item-label class="q-mt-sm">{{ event.description }}</q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </div>
+            </q-card>
+          </div>
+        </div>
       </div>
     </div>
   </q-page>
 </template>
 
 <script>
-import { ref } from 'vue'
-import EventsComponent from '../components/EventsComponent.vue'
+import { ref, computed, onMounted } from 'vue'
+import NewsComponent from '../components/NewsComponent.vue'
+import { mockCmsService } from '../services'
 
 export default {
   name: 'EventsPage',
   components: {
-    EventsComponent
+    NewsComponent
   },
   setup() {
-    // Events with dates in YYYY-MM-DD format for calendar
-    // In production, these would come from a CMS
-    const events = ref([
-      {
-        id: 1,
-        title: 'STEM Fair 2025',
-        date: '2025-10-10',
-        dateFormatted: 'October 10, 2025',
-        time: '10:00 AM - 3:00 PM',
-        location: 'Main Auditorium',
-        description: 'Join us for our annual STEM fair showcasing student projects and innovations.',
-        icon: 'science',
-        color: 'primary'
-      },
-      {
-        id: 2,
-        title: 'Chapter Meeting',
-        date: '2025-10-15',
-        dateFormatted: 'October 15, 2025',
-        time: '4:00 PM - 5:30 PM',
-        location: 'Room 204',
-        description: 'Monthly chapter meeting to discuss upcoming events and initiatives.',
-        icon: 'groups',
-        color: 'primary'
-      },
-      {
-        id: 3,
-        title: 'College Campus Tour',
-        date: '2025-10-20',
-        dateFormatted: 'October 20, 2025',
-        time: '9:00 AM - 4:00 PM',
-        location: 'State University',
-        description: 'Visit State University campus and learn about engineering programs.',
-        icon: 'school',
-        color: 'secondary'
-      },
-      {
-        id: 4,
-        title: 'STEM Workshop',
-        date: '2025-10-22',
-        dateFormatted: 'October 22, 2025',
-        time: '10:00 AM - 2:00 PM',
-        location: 'Science Lab',
-        description: 'Hands-on workshop for students to explore robotics and coding.',
-        icon: 'precision_manufacturing',
-        color: 'secondary'
-      },
-      {
-        id: 5,
-        title: 'Coding Workshop',
-        date: '2025-10-25',
-        dateFormatted: 'October 25, 2025',
-        time: '3:00 PM - 5:00 PM',
-        location: 'Computer Lab',
-        description: 'Learn Python programming basics and work on fun coding projects.',
-        icon: 'code',
-        color: 'accent'
-      },
-      {
-        id: 6,
-        title: 'Community Service',
-        date: '2025-10-29',
-        dateFormatted: 'October 29, 2025',
-        time: '9:00 AM - 12:00 PM',
-        location: 'Community Center',
-        description: 'Volunteer day at the local community center.',
-        icon: 'volunteer_activism',
-        color: 'positive'
-      },
-      {
-        id: 7,
-        title: 'Competition Preparation',
-        date: '2025-11-05',
-        dateFormatted: 'November 5, 2025',
-        time: '3:00 PM - 6:00 PM',
-        location: 'Main Building',
-        description: 'Preparation session for upcoming regional competition.',
-        icon: 'emoji_events',
-        color: 'accent'
+    const newsItems = ref([])
+    const upcomingEvents = ref([])
+    const loading = ref(true)
+
+    onMounted(async () => {
+      try {
+        // Fetch news items from CMS
+        newsItems.value = await mockCmsService.getRecentNews(5)
+
+        // Fetch upcoming events from CMS
+        upcomingEvents.value = await mockCmsService.getUpcomingEvents()
+      } catch (error) {
+        console.error('Failed to load data:', error)
+      } finally {
+        loading.value = false
       }
-    ])
+    })
 
     return {
-      events
+      newsItems,
+      upcomingEvents,
+      loading
     }
   }
 }
 </script>
+
+<style scoped>
+.events-scroll-container {
+  max-height: 480px;
+  /* Adjust this to control how many events show before scrolling (currently ~4 events) */
+  overflow-y: auto;
+}
+
+/* Custom scrollbar styling for events */
+.events-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.events-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.events-scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.events-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>

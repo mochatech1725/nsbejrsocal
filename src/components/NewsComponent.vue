@@ -4,9 +4,9 @@
       <div class="text-h5">News and Announcements</div>
     </q-card-section>
     <q-separator />
-    <div class="news-scroll-container">
+    <div class="news-scroll-container" :style="{ maxHeight: maxHeight }">
       <q-list separator>
-        <q-item v-for="news in newsItems" :key="news.id" clickable :href="news.link" target="_blank">
+        <q-item v-for="news in newsItems" :key="news.id">
           <q-item-section side top>
             <div class="news-date-box bg-primary text-white text-center q-pa-sm rounded-borders">
               <div class="text-h6 text-weight-bold">{{ news.day }}</div>
@@ -20,9 +20,6 @@
             <q-item-label caption lines="2" class="text-body2">
               {{ news.content }}
             </q-item-label>
-          </q-item-section>
-          <q-item-section side>
-            <q-icon name="chevron_right" color="grey" />
           </q-item-section>
         </q-item>
       </q-list>
@@ -38,6 +35,10 @@ export default {
       type: Array,
       required: true,
       default: () => []
+    },
+    maxHeight: {
+      type: String,
+      default: '500px' // Adjust this to control how many items show before scrolling
     }
   }
 }
@@ -50,7 +51,6 @@ export default {
 }
 
 .news-scroll-container {
-  max-height: 500px;
   overflow-y: auto;
 }
 

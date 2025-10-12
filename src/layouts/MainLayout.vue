@@ -31,7 +31,7 @@
             </q-list>
           </q-btn-dropdown>
 
-          <q-btn flat label="Events" :to="{ name: 'events' }" />
+          <q-btn flat label="News & Events" :to="{ name: 'events' }" />
 
           <q-btn-dropdown flat label="Programs">
             <q-list>
@@ -71,7 +71,7 @@
 
         <q-item clickable :to="{ name: 'events' }" v-close-popup>
           <q-item-section>
-            <q-item-label>Events</q-item-label>
+            <q-item-label>News & Events</q-item-label>
           </q-item-section>
         </q-item>
 
@@ -175,11 +175,11 @@ export default {
 }
 
 .chapter-subtitle {
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 1.5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: #666;
+  color: #1976D2;
 }
 
 /* Navigation Bar - Clean and Separate */
@@ -213,8 +213,8 @@ export default {
   }
 
   .chapter-subtitle {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
   }
 
   .navigation-bar {
@@ -232,7 +232,8 @@ export default {
   }
 
   .chapter-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -251,8 +252,8 @@ export default {
   }
 
   .chapter-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 1.05rem;
+    letter-spacing: 2.2px;
   }
 }
 </style>
