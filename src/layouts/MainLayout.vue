@@ -7,8 +7,7 @@
           <div class="chapter-content">
             <img src="@/assets/images/nsbe-jr-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
             <div class="chapter-text">
-              <div class="chapter-main-title">NSBE Jr.</div>
-              <div class="chapter-subtitle">Region VI Southern California Chapter</div>
+              <div class="chapter-main-title">Region VI Southern California Chapter</div>
             </div>
           </div>
         </router-link>
