@@ -11,9 +11,6 @@
           label="General Events" header-class="bg-grey-3 text-grey-8">
           <q-list separator>
             <q-item v-for="event in generalEvents" :key="event.id">
-              <q-item-section avatar>
-                <q-icon :name="event.icon" :color="event.color" size="md" />
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6">{{ event.title }}</q-item-label>
                 <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
@@ -29,9 +26,6 @@
           label="Conferences" header-class="bg-grey-3 text-grey-8">
           <q-list separator>
             <q-item v-for="event in conferences" :key="event.id">
-              <q-item-section avatar>
-                <q-icon :name="event.icon" :color="event.color" size="md" />
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6">{{ event.title }}</q-item-label>
                 <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
@@ -47,9 +41,6 @@
           label="Competitions" header-class="bg-grey-3 text-grey-8">
           <q-list separator>
             <q-item v-for="event in competitions" :key="event.id">
-              <q-item-section avatar>
-                <q-icon :name="event.icon" :color="event.color" size="md" />
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6">{{ event.title }}</q-item-label>
                 <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
@@ -65,9 +56,6 @@
           label="Monthly Meetings" header-class="bg-grey-3 text-grey-8">
           <q-list separator>
             <q-item v-for="event in monthlyMeetings" :key="event.id">
-              <q-item-section avatar>
-                <q-icon :name="event.icon" :color="event.color" size="md" />
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6">{{ event.title }}</q-item-label>
                 <q-item-label caption>{{ event.dateFormatted }} | {{ event.time }}</q-item-label>
