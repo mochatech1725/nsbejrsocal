@@ -136,7 +136,7 @@ export default {
   background: linear-gradient(to right, #f5f5f5 0%, #e8e8e8 100%);
   padding: 12px 16px;
   text-align: center;
-  border-bottom: 2px solid #1976D2;
+  border-bottom: 2px solid #388E3C;
 }
 
 .chapter-link {
@@ -170,7 +170,7 @@ export default {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #1976D2;
+  color: #2E7D32;
   margin-bottom: 4px;
 }
 
@@ -179,12 +179,12 @@ export default {
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: #1976D2;
+  color: #2E7D32;
 }
 
 /* Navigation Bar - Clean and Separate */
 .navigation-bar {
-  background-color: #1565C0;
+  background-color: #388E3C;
   min-height: 56px;
   justify-content: center;
 }

@@ -24,6 +24,25 @@
 }
 
 /* ===================================
+   Section Header Styling
+   =================================== */
+
+/**
+ * .section-header
+ *
+ * Used for collapsible section headers in News and Events components.
+ *
+ * To change the color of ALL section headers across the site:
+ * Simply update the color value below.
+ *
+ * Current: #1976D2 (Primary Blue)
+ */
+.section-header {
+  color: #1976D2 !important;
+  font-weight: 600;
+}
+
+/* ===================================
    Additional Global Classes
    =================================== */
 

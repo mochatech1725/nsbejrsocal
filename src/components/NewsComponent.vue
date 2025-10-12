@@ -1,6 +1,6 @@
 <template>
   <q-card flat bordered>
-    <q-card-section class="bg-primary text-white">
+    <q-card-section class="news-header text-white">
       <div class="text-h5">News and Announcements</div>
     </q-card-section>
     <q-separator />
@@ -8,18 +8,15 @@
       <q-list>
         <!-- General News Section -->
         <q-expansion-item v-if="generalNews.length > 0" default-opened expand-separator icon="info" label="General News"
-          header-class="bg-grey-3 text-grey-8">
+          header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="news in generalNews" :key="news.id">
-              <q-item-section side top>
-                <div class="news-date-box bg-primary text-white text-center q-pa-sm rounded-borders">
-                  <div class="text-h6 text-weight-bold">{{ news.day }}</div>
-                  <div class="text-caption">{{ news.month }}</div>
-                </div>
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6 text-weight-medium q-mb-xs">
                   {{ news.title }}
+                </q-item-label>
+                <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
+                  {{ formatDate(news.date) }}
                 </q-item-label>
                 <q-item-label caption lines="2" class="text-body2">
                   {{ news.content }}
@@ -31,18 +28,15 @@
 
         <!-- Competition News Section -->
         <q-expansion-item v-if="competitionNews.length > 0" default-opened expand-separator icon="emoji_events"
-          label="Competitions" header-class="bg-grey-3 text-grey-8">
+          label="Competitions" header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="news in competitionNews" :key="news.id">
-              <q-item-section side top>
-                <div class="news-date-box bg-primary text-white text-center q-pa-sm rounded-borders">
-                  <div class="text-h6 text-weight-bold">{{ news.day }}</div>
-                  <div class="text-caption">{{ news.month }}</div>
-                </div>
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6 text-weight-medium q-mb-xs">
                   {{ news.title }}
+                </q-item-label>
+                <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
+                  {{ formatDate(news.date) }}
                 </q-item-label>
                 <q-item-label caption lines="2" class="text-body2">
                   {{ news.content }}
@@ -54,18 +48,15 @@
 
         <!-- Conference News Section -->
         <q-expansion-item v-if="conferencesNews.length > 0" default-opened expand-separator icon="school"
-          label="Conferences" header-class="bg-grey-3 text-grey-8">
+          label="Conferences" header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="news in conferencesNews" :key="news.id">
-              <q-item-section side top>
-                <div class="news-date-box bg-primary text-white text-center q-pa-sm rounded-borders">
-                  <div class="text-h6 text-weight-bold">{{ news.day }}</div>
-                  <div class="text-caption">{{ news.month }}</div>
-                </div>
-              </q-item-section>
               <q-item-section>
                 <q-item-label class="text-h6 text-weight-medium q-mb-xs">
                   {{ news.title }}
+                </q-item-label>
+                <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
+                  {{ formatDate(news.date) }}
                 </q-item-label>
                 <q-item-label caption lines="2" class="text-body2">
                   {{ news.content }}
@@ -109,21 +100,27 @@ export default {
       props.newsItems.filter(item => item.category === 'conferences')
     )
 
+    // Format date to display with year
+    const formatDate = (dateString) => {
+      const date = new Date(dateString + 'T00:00:00')
+      const options = { year: 'numeric', month: 'short', day: 'numeric' }
+      return date.toLocaleDateString('en-US', options)
+    }
+
     return {
       generalNews,
       competitionNews,
-      conferencesNews
+      conferencesNews,
+      formatDate
     }
   }
 }
 </script>
 
 <style scoped>
-.news-date-box {
-  min-width: 60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.news-header {
+  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
 }
-
 
 .news-scroll-container {
   overflow-y: auto;

@@ -1,6 +1,6 @@
 <template>
   <q-card flat bordered>
-    <q-card-section class="bg-primary text-white">
+    <q-card-section class="events-header text-white">
       <div class="text-h5">Upcoming Events</div>
     </q-card-section>
     <q-separator />
@@ -8,7 +8,7 @@
       <q-list>
         <!-- General Events Section -->
         <q-expansion-item v-if="generalEvents.length > 0" default-opened expand-separator icon="event"
-          label="General Events" header-class="bg-grey-3 text-grey-8">
+          label="General Events" header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="event in generalEvents" :key="event.id">
               <q-item-section>
@@ -23,7 +23,7 @@
 
         <!-- Conferences Section -->
         <q-expansion-item v-if="conferences.length > 0" default-opened expand-separator icon="school"
-          label="Conferences" header-class="bg-grey-3 text-grey-8">
+          label="Conferences" header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="event in conferences" :key="event.id">
               <q-item-section>
@@ -38,7 +38,7 @@
 
         <!-- Competitions Section -->
         <q-expansion-item v-if="competitions.length > 0" default-opened expand-separator icon="emoji_events"
-          label="Competitions" header-class="bg-grey-3 text-grey-8">
+          label="Competitions" header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="event in competitions" :key="event.id">
               <q-item-section>
@@ -53,7 +53,7 @@
 
         <!-- Monthly Meetings Section (at the end) -->
         <q-expansion-item v-if="monthlyMeetings.length > 0" default-opened expand-separator icon="groups"
-          label="Monthly Meetings" header-class="bg-grey-3 text-grey-8">
+          label="Monthly Meetings" header-class="bg-grey-3 section-header">
           <q-list separator>
             <q-item v-for="event in monthlyMeetings" :key="event.id">
               <q-item-section>
@@ -114,6 +114,10 @@ export default {
 }
 </script>
 <style scoped>
+.events-header {
+  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+}
+
 .events-scroll-container {
   overflow-y: auto;
 }
