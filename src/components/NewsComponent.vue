@@ -10,19 +10,7 @@
         <q-expansion-item v-if="generalNews.length > 0" default-opened expand-separator icon="info" label="General News"
           header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="news in generalNews" :key="news.id">
-              <q-item-section>
-                <q-item-label class="text-h6 text-weight-medium q-mb-xs">
-                  {{ news.title }}
-                </q-item-label>
-                <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
-                  {{ formatDate(news.date) }}
-                </q-item-label>
-                <q-item-label caption lines="2" class="text-body2">
-                  {{ news.content }}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+            <NewsItem v-for="news in generalNews" :key="news.id" :news="news" />
           </q-list>
         </q-expansion-item>
 
@@ -30,19 +18,7 @@
         <q-expansion-item v-if="competitionNews.length > 0" default-opened expand-separator icon="emoji_events"
           label="Competitions" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="news in competitionNews" :key="news.id">
-              <q-item-section>
-                <q-item-label class="text-h6 text-weight-medium q-mb-xs">
-                  {{ news.title }}
-                </q-item-label>
-                <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
-                  {{ formatDate(news.date) }}
-                </q-item-label>
-                <q-item-label caption lines="2" class="text-body2">
-                  {{ news.content }}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+            <NewsItem v-for="news in competitionNews" :key="news.id" :news="news" />
           </q-list>
         </q-expansion-item>
 
@@ -50,19 +26,7 @@
         <q-expansion-item v-if="conferencesNews.length > 0" default-opened expand-separator icon="school"
           label="Conferences" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <q-item v-for="news in conferencesNews" :key="news.id">
-              <q-item-section>
-                <q-item-label class="text-h6 text-weight-medium q-mb-xs">
-                  {{ news.title }}
-                </q-item-label>
-                <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
-                  {{ formatDate(news.date) }}
-                </q-item-label>
-                <q-item-label caption lines="2" class="text-body2">
-                  {{ news.content }}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+            <NewsItem v-for="news in conferencesNews" :key="news.id" :news="news" />
           </q-list>
         </q-expansion-item>
       </q-list>
@@ -72,9 +36,13 @@
 
 <script>
 import { computed } from 'vue'
+import NewsItem from './NewsItem.vue'
 
 export default {
   name: 'NewsComponent',
+  components: {
+    NewsItem
+  },
   props: {
     newsItems: {
       type: Array,
@@ -100,18 +68,10 @@ export default {
       props.newsItems.filter(item => item.category === 'conferences')
     )
 
-    // Format date to display with year
-    const formatDate = (dateString) => {
-      const date = new Date(dateString + 'T00:00:00')
-      const options = { year: 'numeric', month: 'short', day: 'numeric' }
-      return date.toLocaleDateString('en-US', options)
-    }
-
     return {
       generalNews,
       competitionNews,
-      conferencesNews,
-      formatDate
+      conferencesNews
     }
   }
 }
