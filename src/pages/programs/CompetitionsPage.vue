@@ -2,18 +2,20 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 page-title q-mb-md">Competitions</h1>
+        <h1 class="text-h3 page-title q-mb-md text-center">Competitions</h1>
 
-        <q-card flat bordered class="q-mb-lg">
-          <q-card-section>
-            <h2 class="text-h5 q-mb-md">Compete and Excel</h2>
-            <p class="text-body1">
-              Our chapter participates in various STEM competitions at local, regional, and national levels. These
-              competitions provide opportunities to apply skills, showcase talents, and connect with other students
-              passionate about engineering.
-            </p>
-          </q-card-section>
-        </q-card>
+        <!-- Introduction Section -->
+        <div class="intro-section q-mb-lg">
+          <q-card bordered class="intro-card">
+            <q-card-section class="q-pa-lg text-center">
+              <p class="intro-text">
+                Our chapter participates in various STEM competitions at local, regional, and national levels. These
+                competitions provide opportunities to apply skills, showcase talents, and connect with other students
+                passionate about engineering.
+              </p>
+            </q-card-section>
+          </q-card>
+        </div>
 
         <div class="row q-col-gutter-md">
           <div v-for="competition in competitions" :key="competition.id" class="col-12 col-md-6">
@@ -30,22 +32,6 @@
             </q-card>
           </div>
         </div>
-
-        <q-card flat bordered class="q-mt-lg">
-          <q-card-section>
-            <h3 class="text-h6 q-mb-md">Competition Preparation</h3>
-            <p class="text-body2">
-              We provide training and support to help our members succeed in competitions:
-            </p>
-            <ul class="text-body2">
-              <li>Regular practice sessions and workshops</li>
-              <li>Mentorship from experienced competitors and professionals</li>
-              <li>Access to materials and equipment</li>
-              <li>Team formation and project guidance</li>
-              <li>Travel support for regional and national events</li>
-            </ul>
-          </q-card-section>
-        </q-card>
       </div>
     </div>
   </q-page>
@@ -59,15 +45,6 @@ export default {
   setup() {
     const competitions = ref([
       {
-        id: 1,
-        title: 'NSBE Jr. Technical Innovation Competition',
-        description: 'Design and present innovative solutions to real-world engineering challenges.',
-        icon: 'emoji_objects',
-        color: 'primary',
-        level: 'National',
-        levelColor: 'red'
-      },
-      {
         id: 2,
         title: 'Robotics Competitions',
         description: 'FIRST Robotics, VEX Robotics, and other robotics challenges.',
@@ -77,15 +54,6 @@ export default {
         levelColor: 'orange'
       },
       {
-        id: 3,
-        title: 'Science Fair',
-        description: 'Conduct scientific research and present findings at local and state science fairs.',
-        icon: 'science',
-        color: 'accent',
-        level: 'Local & State',
-        levelColor: 'green'
-      },
-      {
         id: 4,
         title: 'Math Olympiad',
         description: 'Test mathematical problem-solving skills in team and individual formats.',
@@ -93,24 +61,6 @@ export default {
         color: 'positive',
         level: 'Regional',
         levelColor: 'blue'
-      },
-      {
-        id: 5,
-        title: 'Coding Competitions',
-        description: 'Programming challenges including hackathons and algorithm competitions.',
-        icon: 'code',
-        color: 'info',
-        level: 'Various',
-        levelColor: 'purple'
-      },
-      {
-        id: 6,
-        title: 'Engineering Design Challenge',
-        description: 'Apply engineering principles to design and build solutions within constraints.',
-        icon: 'engineering',
-        color: 'warning',
-        level: 'Regional',
-        levelColor: 'teal'
       }
     ])
 
@@ -120,3 +70,29 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.intro-section {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-card {
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.intro-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.intro-text {
+  margin: 0;
+  color: #555;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  text-align: center;
+}
+</style>

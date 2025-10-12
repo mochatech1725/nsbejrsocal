@@ -32,13 +32,7 @@
 
           <q-btn flat label="News & Events" :to="{ name: 'events' }" />
 
-          <q-btn-dropdown flat label="Programs">
-            <q-list>
-              <q-item clickable v-close-popup :to="{ name: 'programs-competitions' }">
-                <q-item-section>Competitions</q-item-section>
-              </q-item>
-            </q-list>
-          </q-btn-dropdown>
+          <q-btn flat label="Competitions" :to="{ name: 'programs-competitions' }" />
 
           <q-btn flat label="Partnerships" :to="{ name: 'partnerships' }" />
 
@@ -74,11 +68,11 @@
           </q-item-section>
         </q-item>
 
-        <q-expansion-item label="Programs" icon="school">
-          <q-item clickable :to="{ name: 'programs-competitions' }" v-close-popup>
-            <q-item-section>Competitions</q-item-section>
-          </q-item>
-        </q-expansion-item>
+        <q-item clickable :to="{ name: 'programs-competitions' }" v-close-popup>
+          <q-item-section>
+            <q-item-label>Competitions</q-item-label>
+          </q-item-section>
+        </q-item>
 
         <q-item clickable :to="{ name: 'partnerships' }" v-close-popup>
           <q-item-section>
