@@ -166,11 +166,14 @@ export default {
 }
 
 .chapter-main-title {
+  font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
   font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   color: #2E7D32;
   margin-bottom: 4px;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .chapter-subtitle {
@@ -208,7 +211,7 @@ export default {
 
   .chapter-main-title {
     font-size: 1.3rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
   }
 
   .chapter-subtitle {
@@ -228,6 +231,7 @@ export default {
 
   .chapter-main-title {
     font-size: 1.6rem;
+    letter-spacing: 1.2px;
   }
 
   .chapter-subtitle {
@@ -247,7 +251,7 @@ export default {
 
   .chapter-main-title {
     font-size: 2rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
   }
 
   .chapter-subtitle {
