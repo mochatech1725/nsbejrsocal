@@ -132,10 +132,10 @@ export default {
 
 /* Chapter Identity Section - Separate from Navigation */
 .chapter-identity-section {
-  background: linear-gradient(to right, #f5f5f5 0%, #e8e8e8 100%);
-  padding: 12px 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  padding: 16px;
   text-align: center;
-  border-bottom: 2px solid #388E3C;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .chapter-link {
@@ -184,15 +184,47 @@ export default {
   color: #2E7D32;
 }
 
-/* Navigation Bar - Clean and Separate */
+/* Navigation Bar - Modern and Styled */
 .navigation-bar {
-  background-color: #388E3C;
+  background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
   min-height: 56px;
   justify-content: center;
+  border-top: 2px solid #388E3C;
 }
 
 .desktop-menu {
   margin: 0 auto;
+}
+
+.desktop-menu .q-btn {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.desktop-menu .q-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #43A047;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.desktop-menu .q-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-menu .q-btn:hover::after {
+  width: 80%;
+}
+
+.desktop-menu .q-btn.router-link-active::after {
+  width: 80%;
 }
 
 /* Responsive adjustments */
