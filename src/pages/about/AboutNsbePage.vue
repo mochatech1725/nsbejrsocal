@@ -58,6 +58,27 @@
           </div>
         </div>
 
+        <!-- PCI Card -->
+        <div class="row justify-center q-mb-lg">
+          <div class="col-12 col-md-10">
+            <q-card flat bordered class="pci-card">
+              <q-card-section class="card-header text-center q-py-md">
+                <div class="text-h6">PCI</div>
+              </q-card-section>
+              <q-card-section class="q-pa-md">
+                <p class="text-body2 text-grey-8" style="line-height: 1.8;">
+                  The Pre-College Initiative (PCI) program is designed to stimulate the interest in science, technology,
+                  engineering, and mathematics fields, or STEM. The goal is to encourage students in grades K–12 to
+                  attend college and pursue technical degrees. Our PCI program provides activities to help students
+                  discover
+                  firsthand how engineering and technology relate to the world around them and discover the excitement
+                  of academic excellence, leadership, technical development and teamwork.
+                </p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+
         <!-- NSBE Regions Card -->
         <div class="row justify-center q-mb-lg">
           <div class="col-12 col-md-10">
@@ -80,7 +101,7 @@
 
 <script>
 export default {
-  name: 'NSBEPage'
+  name: 'AboutNsbePage'
 }
 </script>
 
@@ -124,6 +145,15 @@ export default {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.pci-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pci-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Removed - now using global .card-header class */

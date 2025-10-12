@@ -8,8 +8,8 @@ const routes = [
     children: [
       { path: '', name: 'home', component: () => import('../pages/HomePage.vue') },
 
-      // About Us
-      { path: '/about/nsbe', name: 'about-nsbe', component: () => import('../pages/about/NSBEPage.vue') },
+            // About Us
+            { path: '/about/about-nsbe', name: 'about-nsbe', component: () => import('../pages/about/AboutNsbePage.vue') },
       { path: '/about/student-executive-board', name: 'executive-board', component: () => import('../pages/about/StudentExecutiveBoardPage.vue') },
       { path: '/about/contact', name: 'about-contact', component: () => import('../pages/about/ContactPage.vue') },
 
