@@ -1,0 +1,35 @@
+{
+  "name": "nsbejr",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "NSBE Jr. Chapter Website - A Vue.js website with Quasar framework",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "nsbe",
+    "stem",
+    "education",
+    "vue",
+    "quasar"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@quasar/extras": "^1.17.0",
+    "@supabase/supabase-js": "^2.75.0",
+    "quasar": "^2.18.5",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^1.10.0",
+    "@types/node": "^24.7.2",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "sass-embedded": "^1.93.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9"
+  }
+}
