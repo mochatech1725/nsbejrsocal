@@ -189,39 +189,39 @@ const mockMeetingAlbums: GalleryAlbum[] = [
     title: 'October General Meeting',
     date: 'October 05, 2025',
     photoCount: 5,
-    coverImage: '/src/assets/images/IMG_3927.png',
+    coverImage: '/src/assets/images/gallery/IMG_3927.png',
     photos: [
       {
         id: 'photo-1',
-        image: '/src/assets/images/IMG_3927.png',
+        image: '/src/assets/images/gallery/IMG_3927.png',
         title: 'Team Activity',
         date: 'October 15, 2025',
         description: 'Chapter members at the meeting'
       },
       {
         id: 'photo-2',
-        image: '/src/assets/images/IMG_3930.png',
+        image: '/src/assets/images/gallery/IMG_3930.png',
         title: 'Team Activity',
         date: 'October 15, 2025',
         description: 'Members collaborating on a project'
       },
       {
         id: 'photo-3',
-        image: '/src/assets/images/IMG_3935.png',
+        image: '/src/assets/images/gallery/IMG_3935.png',
         title: 'Team Activity',
         date: 'October 15, 2025',
         description: 'Members collaborating on a project'
       },
       {
         id: 'photo-4',
-        image: '/src/assets/images/IMG_3936.png',
+        image: '/src/assets/images/gallery/IMG_3936.png',
         title: 'Team Activity',
         date: 'October 15, 2025',
         description: 'Members collaborating on a project'
       },
       {
         id: 'photo-5',
-        image: '/src/assets/images/IMG_3939.png',
+        image: '/src/assets/images/gallery/IMG_3939.png',
         title: 'Team Activity',
         date: 'October 15, 2025',
         description: 'Members collaborating on a project'

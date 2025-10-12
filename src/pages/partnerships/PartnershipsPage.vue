@@ -2,23 +2,18 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 page-title q-mb-md text-center">Partnerships & Sponsors</h1>
+        <h1 class="text-h3 page-title q-mb-sm text-center">Partnerships</h1>
 
         <!-- Introduction -->
-        <div class="text-center q-mb-xl q-pa-md">
-          <p class="text-body1 text-grey-7" style="max-width: 800px; margin: 0 auto;">
+        <div class="text-center q-mb-md">
+          <p class="text-body2 text-grey-7" style="max-width: 700px; margin: 0 auto;">
             We collaborate with organizations dedicated to STEM education to provide our members
             with enriching experiences and opportunities that inspire the next generation of engineers.
           </p>
         </div>
 
         <!-- Featured Partner: PS Science -->
-        <div class="partner-feature q-mb-lg">
-          <div class="text-center q-mb-lg">
-            <h2 class="text-h4 text-primary q-mb-md">Our Partners</h2>
-            <q-separator class="q-my-md" style="max-width: 80px; margin: 0 auto;" />
-          </div>
-
+        <div class="partner-feature q-mt-lg q-mb-lg">
           <div class="partner-content">
             <!-- Logo Section -->
             <div class="partner-logo-section">
@@ -29,33 +24,20 @@
 
             <!-- Description Section -->
             <div class="partner-description">
-              <h3 class="text-h5 text-grey-8 q-mb-md">PS Science</h3>
-              <p class="text-body1 text-grey-7 q-mb-md" style="line-height: 1.8;">
+              <h3 class="text-h4 text-primary q-mb-sm" style="font-weight: 700;">PS Science</h3>
+              <p class="text-body2 text-grey-7 q-mb-sm" style="line-height: 1.7;">
                 PS Science brings hands-on STEM learning to elementary school children. They support classroom teachers
                 and community educators with lessons, materials, and training to ensure all kids have an equal chance
                 at the STEM careers of the future.
               </p>
-              <p class="text-body1 text-grey-7 q-mb-lg" style="line-height: 1.8;">
-                Through our partnership with PS Science, our chapter members gain access to high-quality STEM education
-                resources, engaging learning experiences, and opportunities to develop critical thinking skills that
-                will
-                serve them throughout their academic journey.
+              <p class="text-body2 text-grey-7 q-mb-md" style="line-height: 1.7;">
+                Through our partnership, our chapter members gain access to high-quality STEM education
+                resources, engaging learning experiences, and opportunities to develop critical thinking skills.
               </p>
               <q-btn color="primary" label="Visit PS Science" icon-right="open_in_new" href="https://psscience.org/"
-                target="_blank" rel="noopener noreferrer" outline />
+                target="_blank" rel="noopener noreferrer" unelevated rounded class="q-px-lg" />
             </div>
           </div>
-        </div>
-
-        <!-- Call to Action -->
-        <q-separator class="q-my-xl" />
-        <div class="text-center q-pa-lg partner-cta">
-          <h3 class="text-h5 text-grey-8 q-mb-md">Interested in Partnering?</h3>
-          <p class="text-body1 text-grey-7 q-mb-md" style="max-width: 600px; margin: 0 auto 24px;">
-            We welcome collaborations that support our mission of empowering students in STEM.
-            Contact us to learn more about partnership opportunities.
-          </p>
-          <q-btn color="primary" label="Contact Us" icon="email" :to="{ name: 'about-contact' }" unelevated />
         </div>
       </div>
     </div>
@@ -70,17 +52,19 @@ export default {
 
 <style scoped>
 .partner-feature {
-  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
-  border-radius: 12px;
-  padding: 32px 24px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 24px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .partner-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  max-width: 900px;
+  gap: 24px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -88,26 +72,28 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 24px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8e8e8;
 }
 
 .partner-logo {
-  max-width: 280px;
+  max-width: 120px;
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .partner-logo:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+  transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
 .partner-description {
   width: 100%;
+  text-align: center;
 }
 
 .partner-cta {
@@ -119,21 +105,27 @@ export default {
 @media (min-width: 768px) {
   .partner-content {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    gap: 32px;
   }
 
   .partner-logo-section {
-    flex: 0 0 320px;
+    flex: 0 0 160px;
   }
 
   .partner-description {
     flex: 1;
+    text-align: left;
   }
 }
 
 @media (min-width: 1024px) {
   .partner-logo {
-    max-width: 320px;
+    max-width: 140px;
+  }
+
+  .partner-logo-section {
+    flex: 0 0 180px;
   }
 }
 </style>
