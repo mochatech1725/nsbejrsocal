@@ -1,13 +1,12 @@
 <template>
   <div>
     <!-- Gallery Categories with Styled Tabs -->
-    <q-card flat bordered class="q-mb-lg">
-      <q-tabs v-model="selectedCategory" dense class="text-grey-7 gallery-tabs" active-color="green-7"
-        indicator-color="green-7" align="justify" narrow-indicator>
+    <div class="gallery-tabs-container q-mb-lg">
+      <q-tabs v-model="selectedCategory" class="gallery-tabs" active-color="white" inline-label align="center">
         <q-tab v-for="category in categoryOptions" :key="category.value" :name="category.value" :label="category.label"
           :icon="getCategoryIcon(category.value)" no-caps class="tab-item" />
       </q-tabs>
-    </q-card>
+    </div>
 
     <!-- Content based on selected category -->
     <q-tab-panels v-model="selectedCategory" animated>
@@ -173,16 +172,46 @@ export default {
 </script>
 
 <style scoped>
+.gallery-tabs-container {
+  display: flex;
+  justify-content: center;
+}
+
 .gallery-tabs {
-  --q-primary: #388E3C;
+  background: transparent;
+  box-shadow: none;
 }
 
 .tab-item {
-  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  margin: 0 6px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #666;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.tab-item:hover {
+  background: #e8e8e8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tab-item.q-tab--active {
-  color: #388E3C;
+  background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.3);
+  border: 2px solid #388E3C;
+}
+
+.tab-item.q-tab--active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(56, 142, 60, 0.4);
 }
 
 .gallery-card {
