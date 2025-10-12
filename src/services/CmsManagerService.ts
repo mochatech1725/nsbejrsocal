@@ -57,6 +57,7 @@ export type GalleryAlbum = {
   title: string;
   date: string;
   photoCount: number;
+  category: string;
   coverImage: string;
   photos: GalleryPhoto[];
 }
@@ -148,6 +149,13 @@ export abstract class CmsManagerService {
    * @returns Promise resolving to an array of meeting albums
    */
   abstract getMeetingAlbums(): Promise<GalleryAlbum[]>;
+
+  /**
+   * Get albums by category
+   * @param category - The category to filter by (meetings, events, competitions)
+   * @returns Promise resolving to an array of albums
+   */
+  abstract getAlbumsByCategory(category: string): Promise<GalleryAlbum[]>;
 
   /**
    * Get a specific album by ID

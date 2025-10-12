@@ -182,13 +182,15 @@ const mockEvents: NsbeEvent[] = transformEvents();
 // Empty for now - add events and competitions photos here as needed
 const mockGalleryItems: GalleryItem[] = [];
 
-// Mock Meeting Albums Data
-const mockMeetingAlbums: GalleryAlbum[] = [
+// Mock Albums Data
+const mockAlbums: GalleryAlbum[] = [
+  // Meetings Albums
   {
-    id: 'album-1',
+    id: 'album-meetings-1',
     title: 'October General Meeting',
     date: 'October 05, 2025',
     photoCount: 5,
+    category: 'meetings',
     coverImage: '/src/assets/images/gallery/IMG_3927.png',
     photos: [
       {
@@ -228,6 +230,7 @@ const mockMeetingAlbums: GalleryAlbum[] = [
       }
     ]
   }
+  // Events and Competitions albums will be added here as photos become available
 ];
 
 export class MockCmsManagerService extends CmsManagerService {
@@ -328,12 +331,17 @@ export class MockCmsManagerService extends CmsManagerService {
 
   async getMeetingAlbums(): Promise<GalleryAlbum[]> {
     await this.simulateDelay();
-    return [...mockMeetingAlbums];
+    return mockAlbums.filter(album => album.category === 'meetings');
+  }
+
+  async getAlbumsByCategory(category: string): Promise<GalleryAlbum[]> {
+    await this.simulateDelay();
+    return mockAlbums.filter(album => album.category === category);
   }
 
   async getAlbumById(id: string): Promise<GalleryAlbum | null> {
     await this.simulateDelay();
-    return mockMeetingAlbums.find(album => album.id === id) || null;
+    return mockAlbums.find(album => album.id === id) || null;
   }
 }
 

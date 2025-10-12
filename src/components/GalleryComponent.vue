@@ -10,10 +10,10 @@
 
     <!-- Content based on selected category -->
     <q-tab-panels v-model="selectedCategory" animated>
-      <!-- Meetings Tab with Albums -->
-      <q-tab-panel name="meetings" class="q-pa-none">
-        <div v-if="meetingAlbums.length > 0" class="row q-col-gutter-md">
-          <div v-for="album in meetingAlbums" :key="album.id" class="col-12 col-sm-6 col-md-4">
+      <!-- All Categories Display Albums -->
+      <q-tab-panel v-for="category in categoryOptions" :key="category.value" :name="category.value" class="q-pa-none">
+        <div v-if="currentAlbums.length > 0" class="row q-col-gutter-md">
+          <div v-for="album in currentAlbums" :key="album.id" class="col-12 col-sm-6 col-md-4">
             <q-card flat bordered class="album-card cursor-pointer" @click="openAlbum(album)">
               <q-img :src="album.coverImage" :ratio="4 / 3" class="album-cover">
                 <div class="absolute-full album-overlay">
@@ -28,33 +28,7 @@
         </div>
         <div v-else class="text-center q-pa-xl">
           <q-icon name="photo_album" size="5rem" color="grey-5" />
-          <p class="text-h6 text-grey-6 q-mt-md">No meeting albums yet</p>
-          <p class="text-body2 text-grey-6">Check back soon for updates!</p>
-        </div>
-      </q-tab-panel>
-
-      <!-- Other tabs with standard gallery grid -->
-      <q-tab-panel v-for="category in nonMeetingCategories" :key="category.value" :name="category.value"
-        class="q-pa-none">
-        <div v-if="filteredGalleryItems.length > 0" class="row q-col-gutter-md">
-          <div v-for="item in filteredGalleryItems" :key="item.id" class="col-12 col-sm-6 col-md-4">
-            <q-card flat bordered class="gallery-card">
-              <q-img :src="item.image" :ratio="4 / 3" class="gallery-image">
-                <div class="absolute-bottom text-subtitle2 text-center q-pa-sm">
-                  {{ item.title }}
-                </div>
-                <template v-slot:loading>
-                  <div class="row justify-center items-center full-height">
-                    <q-icon name="image" size="4rem" color="grey-5" />
-                  </div>
-                </template>
-              </q-img>
-            </q-card>
-          </div>
-        </div>
-        <div v-else class="text-center q-pa-xl">
-          <q-icon name="photo_library" size="5rem" color="grey-5" />
-          <p class="text-h6 text-grey-6 q-mt-md">No photos in this category yet</p>
+          <p class="text-h6 text-grey-6 q-mt-md">No albums in this category yet</p>
           <p class="text-body2 text-grey-6">Check back soon for updates!</p>
         </div>
       </q-tab-panel>
@@ -72,18 +46,7 @@
         <q-card-section>
           <div class="row q-col-gutter-md">
             <div v-for="photo in selectedAlbum?.photos" :key="photo.id" class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <q-card flat bordered class="gallery-card">
-                <q-img :src="photo.image" :ratio="1" class="gallery-image">
-                  <div v-if="photo.title" class="absolute-bottom text-subtitle2 text-center q-pa-sm">
-                    {{ photo.title }}
-                  </div>
-                  <template v-slot:loading>
-                    <div class="row justify-center items-center full-height">
-                      <q-icon name="image" size="3rem" color="grey-5" />
-                    </div>
-                  </template>
-                </q-img>
-              </q-card>
+              <GalleryItem :item="photo" />
             </div>
           </div>
         </q-card-section>
@@ -94,9 +57,13 @@
 
 <script>
 import { ref, computed } from 'vue'
+import GalleryItem from './GalleryItem.vue'
 
 export default {
   name: 'GalleryComponent',
+  components: {
+    GalleryItem
+  },
   props: {
     galleryItems: {
       type: Array,
@@ -119,28 +86,28 @@ export default {
 
     const categoryOptions = computed(() => props.categories)
 
-    const nonMeetingCategories = computed(() => {
-      return props.categories.filter(cat => cat.value !== 'meetings')
+    const albums = ref([])
+
+    // Load albums for current category
+    const currentAlbums = computed(() => {
+      return albums.value.filter(album => album.category === selectedCategory.value)
     })
 
-    const filteredGalleryItems = computed(() => {
-      return props.galleryItems.filter(item => item.category === selectedCategory.value)
-    })
-
-    const meetingAlbums = ref([])
-
-    // Fetch meeting albums from CMS when component mounts
-    const loadMeetingAlbums = async () => {
+    // Load all albums when component mounts
+    const loadAllAlbums = async () => {
       try {
         const { mockCmsService } = await import('../services')
-        meetingAlbums.value = await mockCmsService.getMeetingAlbums()
+        const meetingsAlbums = await mockCmsService.getAlbumsByCategory('meetings')
+        const eventsAlbums = await mockCmsService.getAlbumsByCategory('events')
+        const competitionsAlbums = await mockCmsService.getAlbumsByCategory('competitions')
+        albums.value = [...meetingsAlbums, ...eventsAlbums, ...competitionsAlbums]
       } catch (error) {
-        console.error('Failed to load meeting albums:', error)
+        console.error('Failed to load albums:', error)
       }
     }
 
     // Load albums when component mounts
-    loadMeetingAlbums()
+    loadAllAlbums()
 
     const getCategoryIcon = (value) => {
       const icons = {
@@ -159,11 +126,9 @@ export default {
     return {
       selectedCategory,
       categoryOptions,
-      nonMeetingCategories,
-      filteredGalleryItems,
+      currentAlbums,
       albumDialog,
       selectedAlbum,
-      meetingAlbums,
       getCategoryIcon,
       openAlbum
     }
@@ -212,19 +177,6 @@ export default {
 .tab-item.q-tab--active:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(56, 142, 60, 0.4);
-}
-
-.gallery-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-image {
-  background-color: #f5f5f5;
 }
 
 .album-card {
