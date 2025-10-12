@@ -39,8 +39,8 @@
         class="q-pa-none">
         <div v-if="filteredGalleryItems.length > 0" class="row q-col-gutter-md">
           <div v-for="item in filteredGalleryItems" :key="item.id" class="col-12 col-sm-6 col-md-4">
-            <q-card flat bordered class="gallery-card cursor-pointer" @click="openImage(item)">
-              <q-img :src="item.thumbnail" :ratio="4 / 3" class="gallery-image">
+            <q-card flat bordered class="gallery-card">
+              <q-img :src="item.image" :ratio="4 / 3" class="gallery-image">
                 <div class="absolute-bottom text-subtitle2 text-center q-pa-sm">
                   {{ item.title }}
                 </div>
@@ -73,8 +73,11 @@
         <q-card-section>
           <div class="row q-col-gutter-md">
             <div v-for="photo in selectedAlbum?.photos" :key="photo.id" class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <q-card flat bordered class="gallery-card cursor-pointer" @click="openImage(photo)">
-                <q-img :src="photo.thumbnail" :ratio="1" class="gallery-image">
+              <q-card flat bordered class="gallery-card">
+                <q-img :src="photo.image" :ratio="1" class="gallery-image">
+                  <div v-if="photo.title" class="absolute-bottom text-subtitle2 text-center q-pa-sm">
+                    {{ photo.title }}
+                  </div>
                   <template v-slot:loading>
                     <div class="row justify-center items-center full-height">
                       <q-icon name="image" size="3rem" color="grey-5" />
@@ -84,22 +87,6 @@
               </q-card>
             </div>
           </div>
-        </q-card-section>
-      </q-card>
-    </q-dialog>
-
-    <!-- Image Dialog -->
-    <q-dialog v-model="imageDialog">
-      <q-card style="min-width: 50vw">
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">{{ selectedImage?.title }}</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
-        </q-card-section>
-        <q-card-section>
-          <q-img :src="selectedImage?.fullsize" />
-          <p v-if="selectedImage?.description" class="q-mt-md text-body2">{{ selectedImage?.description }}</p>
-          <p v-if="selectedImage?.date" class="text-caption text-grey-7">{{ selectedImage?.date }}</p>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -128,8 +115,6 @@ export default {
   },
   setup(props) {
     const selectedCategory = ref('events')
-    const imageDialog = ref(false)
-    const selectedImage = ref(null)
     const albumDialog = ref(false)
     const selectedAlbum = ref(null)
 
@@ -167,11 +152,6 @@ export default {
       return icons[value] || 'photo_library'
     }
 
-    const openImage = (item) => {
-      selectedImage.value = item
-      imageDialog.value = true
-    }
-
     const openAlbum = (album) => {
       selectedAlbum.value = album
       albumDialog.value = true
@@ -182,13 +162,10 @@ export default {
       categoryOptions,
       nonMeetingCategories,
       filteredGalleryItems,
-      imageDialog,
-      selectedImage,
       albumDialog,
       selectedAlbum,
       meetingAlbums,
       getCategoryIcon,
-      openImage,
       openAlbum
     }
   }

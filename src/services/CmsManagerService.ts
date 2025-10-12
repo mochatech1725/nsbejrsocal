@@ -34,14 +34,12 @@ export type GalleryItem = {
   description: string;
   category: string;
   date: string;
-  thumbnail: string;
-  fullsize: string;
+  image: string;
 }
 
 export type GalleryPhoto = {
   id: string;
-  thumbnail: string;
-  fullsize: string;
+  image: string;
   title: string;
   date: string;
   description?: string;
