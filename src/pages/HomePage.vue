@@ -2,21 +2,17 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <!-- Hero Section -->
-        <div class="hero-section q-mb-md text-center q-pa-md bg-primary text-white rounded-borders">
-          <h1 class="text-h4 q-mb-sm">Welcome to NSBE Jr. Chapter</h1>
-          <p class="text-body1">Empowering the next generation of engineers and innovators</p>
-        </div>
 
-        <!-- Mission Statement -->
-        <div class="q-mb-lg text-center">
-          <p class="text-body1">
-            Our mission is to increase the number of culturally responsible Black engineers who excel academically, succeed professionally, and positively impact the community.
-          </p>
+        <!-- Loading State -->
+        <div v-if="loading" class="row q-col-gutter-lg q-mb-xl">
+          <div class="col-12 text-center q-py-xl">
+            <q-spinner-dots color="primary" size="50px" />
+            <div class="text-grey-6 q-mt-md">Loading content...</div>
+          </div>
         </div>
 
         <!-- Two Column Layout for News and Events -->
-        <div class="row q-col-gutter-lg q-mb-xl">
+        <div v-else class="row q-col-gutter-lg q-mb-xl">
           <!-- News and Announcements Section -->
           <div class="col-12 col-md-8">
             <NewsComponent :news-items="newsItems" />
@@ -43,7 +39,7 @@
                     </q-item-label>
                   </q-item-section>
                 </q-item>
-                <q-item v-if="upcomingEvents.length === 0">
+                <q-item v-if="upcomingEvents.length === 0 && !loading">
                   <q-item-section>
                     <q-item-label class="text-grey-6 text-center q-py-md">
                       No upcoming events
@@ -53,13 +49,7 @@
               </q-list>
               <q-separator />
               <q-card-actions align="center">
-                <q-btn 
-                  flat 
-                  color="secondary" 
-                  label="Show Calendar" 
-                  icon="calendar_month"
-                  :to="{ name: 'events' }"
-                />
+                <q-btn flat color="secondary" label="Show Calendar" icon="calendar_month" :to="{ name: 'events' }" />
               </q-card-actions>
             </q-card>
           </div>
@@ -70,8 +60,9 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import NewsComponent from '../components/NewsComponent.vue'
+import { mockCmsService } from '../services'
 
 export default {
   name: 'HomePage',
@@ -79,81 +70,54 @@ export default {
     NewsComponent
   },
   setup() {
-    // Sample news items - In production, these would come from a CMS
-    const newsItems = ref([
-      {
-        id: 1,
-        day: '10',
-        month: 'OCT',
-        title: 'Upcoming STEM Fair',
-        content: 'Join us for our annual STEM fair showcasing student projects and innovations. All are welcome! Register now to reserve your spot.',
-        link: '#'
-      },
-      {
-        id: 2,
-        day: '05',
-        month: 'OCT',
-        title: 'New Membership Drive',
-        content: 'We are opening registration for new members. Sign up today and be part of our growing community. Early registration benefits available.',
-        link: '#'
-      },
-      {
-        id: 3,
-        day: '28',
-        month: 'SEP',
-        title: 'Community Service Day Success',
-        content: 'Thank you to all volunteers who participated in our community cleanup initiative. Together we made a difference in our neighborhood!',
-        link: '#'
-      },
-      {
-        id: 4,
-        day: '15',
-        month: 'SEP',
-        title: 'Robotics Competition Winners',
-        content: 'Congratulations to our robotics team for placing first in the regional competition! Their dedication and hard work paid off.',
-        link: '#'
-      }
-    ])
+    const newsItems = ref([])
+    const upcomingEvents = ref([])
+    const loading = ref(true)
 
-    // Sample upcoming events - In production, these would come from a CMS
-    const upcomingEvents = ref([
-      {
-        id: 1,
-        title: 'STEM Fair 2025',
-        date: 'October 10, 2025',
-        location: 'Main Auditorium'
-      },
-      {
-        id: 2,
-        title: 'General Meeting',
-        date: 'October 15, 2025',
-        location: 'Room 204'
-      },
-      {
-        id: 3,
-        title: 'College Campus Tour',
-        date: 'October 20, 2025',
-        location: 'State University'
-      },
-      {
-        id: 4,
-        title: 'Coding Workshop',
-        date: 'October 25, 2025',
-        location: 'Computer Lab'
+    onMounted(async () => {
+      try {
+        // Fetch news items (limit to 5 most recent)
+        newsItems.value = await mockCmsService.getRecentNews(5)
+
+        // Fetch upcoming events (limit to 4)
+        const events = await mockCmsService.getUpcomingEvents(4)
+
+        // Format events for the sidebar display
+        upcomingEvents.value = events.map(event => ({
+          id: event.id,
+          title: event.title,
+          date: event.dateFormatted,
+          location: event.location
+        }))
+      } catch (error) {
+        console.error('Failed to load data:', error)
+      } finally {
+        loading.value = false
       }
-    ])
+    })
 
     return {
       newsItems,
-      upcomingEvents
+      upcomingEvents,
+      loading
     }
   }
 }
 </script>
 
 <style scoped>
-.hero-section {
-  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+.mission-vision-card {
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mission-vision-text {
+  line-height: 1.8;
+  text-align: center;
 }
 </style>
-

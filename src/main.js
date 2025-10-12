@@ -9,6 +9,9 @@ import '@quasar/extras/material-icons/material-icons.css'
 // Import Quasar css
 import 'quasar/src/css/index.sass'
 
+// Import global styles
+import './assets/styles/global.css'
+
 const app = createApp(App)
 
 app.use(Quasar, {

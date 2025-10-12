@@ -2,7 +2,7 @@
   "name": "nsbejr-website",
   "version": "1.0.0",
   "type": "module",
-  "description": "NSBE Jr. Chapter Website - A Vue.js website with Quasar framework",
+  "description": "NSBE Jr. Southern California Chapter Website",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

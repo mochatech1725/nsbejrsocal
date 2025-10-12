@@ -2,13 +2,15 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 q-mb-md">Competitions</h1>
-        
+        <h1 class="text-h3 page-title q-mb-md">Competitions</h1>
+
         <q-card flat bordered class="q-mb-lg">
           <q-card-section>
             <h2 class="text-h5 q-mb-md">Compete and Excel</h2>
             <p class="text-body1">
-              Our chapter participates in various STEM competitions at local, regional, and national levels. These competitions provide opportunities to apply skills, showcase talents, and connect with other students passionate about engineering.
+              Our chapter participates in various STEM competitions at local, regional, and national levels. These
+              competitions provide opportunities to apply skills, showcase talents, and connect with other students
+              passionate about engineering.
             </p>
           </q-card-section>
         </q-card>
@@ -118,4 +120,3 @@ export default {
   }
 }
 </script>
-

@@ -1,17 +1,25 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-primary text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <router-link to="/" class="text-white" style="text-decoration: none">
-            NSBE Jr. Chapter
-          </router-link>
-        </q-toolbar-title>
+    <q-header elevated class="header-custom">
+      <!-- Chapter Identity Section -->
+      <div class="chapter-identity-section">
+        <router-link to="/" class="chapter-link">
+          <div class="chapter-content">
+            <img src="@/assets/images/nsbe-jr-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
+            <div class="chapter-text">
+              <div class="chapter-main-title">NSBE Jr.</div>
+              <div class="chapter-subtitle">Region VI Southern California Chapter</div>
+            </div>
+          </div>
+        </router-link>
+      </div>
 
+      <!-- Navigation Bar -->
+      <q-toolbar class="navigation-bar">
         <!-- Desktop Menu -->
         <div v-if="$q.screen.gt.sm" class="desktop-menu row q-gutter-sm">
           <q-btn flat label="Home" :to="{ name: 'home' }" />
-          
+
           <q-btn-dropdown flat label="About Us">
             <q-list>
               <q-item clickable v-close-popup :to="{ name: 'about-nsbe' }">
@@ -119,8 +127,132 @@ export default {
 </script>
 
 <style scoped>
+.header-custom {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Chapter Identity Section - Separate from Navigation */
+.chapter-identity-section {
+  background: linear-gradient(to right, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 2px solid #1976D2;
+}
+
+.chapter-link {
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.chapter-link:hover {
+  opacity: 0.8;
+}
+
+.chapter-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.chapter-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.chapter-text {
+  text-align: left;
+}
+
+.chapter-main-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #1976D2;
+  margin-bottom: 4px;
+}
+
+.chapter-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* Navigation Bar - Clean and Separate */
+.navigation-bar {
+  background-color: #1565C0;
+  min-height: 56px;
+  justify-content: center;
+}
+
 .desktop-menu {
-  margin-left: auto;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .chapter-identity-section {
+    padding: 10px 12px;
+  }
+
+  .chapter-content {
+    gap: 12px;
+  }
+
+  .chapter-logo {
+    height: 40px;
+  }
+
+  .chapter-main-title {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+
+  .navigation-bar {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  .chapter-identity-section {
+    padding: 12px 16px;
+  }
+
+  .chapter-main-title {
+    font-size: 1.6rem;
+  }
+
+  .chapter-subtitle {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chapter-identity-section {
+    padding: 14px 24px;
+  }
+
+  .chapter-logo {
+    height: 60px;
+  }
+
+  .chapter-main-title {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .chapter-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
 }
 </style>
-

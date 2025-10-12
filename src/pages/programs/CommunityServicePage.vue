@@ -2,13 +2,14 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 q-mb-md">Community Service</h1>
-        
+        <h1 class="text-h3 page-title q-mb-md">Community Service</h1>
+
         <q-card flat bordered class="q-mb-lg">
           <q-card-section>
             <h2 class="text-h5 q-mb-md">Making a Positive Impact</h2>
             <p class="text-body1">
-              Community service is a core value of NSBE. Our members actively participate in projects that benefit our local community and inspire others to pursue STEM education.
+              Community service is a core value of NSBE. Our members actively participate in projects that benefit our
+              local community and inspire others to pursue STEM education.
             </p>
           </q-card-section>
         </q-card>
@@ -30,7 +31,8 @@
           <q-card-section>
             <h3 class="text-h6 q-mb-md">Get Involved</h3>
             <p class="text-body2">
-              Interested in volunteering? Check our Calendar for upcoming community service events or contact us to learn about current opportunities.
+              Interested in volunteering? Check our Calendar for upcoming community service events or contact us to
+              learn about current opportunities.
             </p>
             <div class="q-mt-md">
               <q-btn color="primary" label="View Calendar" :to="{ name: 'calendar' }" />
@@ -100,4 +102,3 @@ export default {
   }
 }
 </script>
-

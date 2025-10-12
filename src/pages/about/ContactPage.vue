@@ -2,8 +2,8 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-8">
-        <h1 class="text-h3 q-mb-md">Contact Us</h1>
-        
+        <h1 class="text-h3 page-title q-mb-md">Contact Us</h1>
+
         <q-card flat bordered class="q-mb-lg">
           <q-card-section>
             <p class="text-body1 q-mb-lg">
@@ -11,43 +11,19 @@
             </p>
 
             <q-form @submit="onSubmit" class="q-gutter-md">
-              <q-input
-                filled
-                v-model="form.name"
-                label="Your Name *"
-                lazy-rules
-                :rules="[val => val && val.length > 0 || 'Please enter your name']"
-              />
+              <q-input filled v-model="form.name" label="Your Name *" lazy-rules
+                :rules="[val => val && val.length > 0 || 'Please enter your name']" />
 
-              <q-input
-                filled
-                v-model="form.email"
-                label="Your Email *"
-                type="email"
-                lazy-rules
-                :rules="[
-                  val => val && val.length > 0 || 'Please enter your email',
-                  val => val && val.includes('@') || 'Please enter a valid email'
-                ]"
-              />
+              <q-input filled v-model="form.email" label="Your Email *" type="email" lazy-rules :rules="[
+                val => val && val.length > 0 || 'Please enter your email',
+                val => val && val.includes('@') || 'Please enter a valid email'
+              ]" />
 
-              <q-input
-                filled
-                v-model="form.subject"
-                label="Subject *"
-                lazy-rules
-                :rules="[val => val && val.length > 0 || 'Please enter a subject']"
-              />
+              <q-input filled v-model="form.subject" label="Subject *" lazy-rules
+                :rules="[val => val && val.length > 0 || 'Please enter a subject']" />
 
-              <q-input
-                filled
-                v-model="form.message"
-                label="Message *"
-                type="textarea"
-                rows="6"
-                lazy-rules
-                :rules="[val => val && val.length > 0 || 'Please enter a message']"
-              />
+              <q-input filled v-model="form.message" label="Message *" type="textarea" rows="6" lazy-rules
+                :rules="[val => val && val.length > 0 || 'Please enter a message']" />
 
               <div>
                 <q-btn label="Send Message" type="submit" color="primary" />
@@ -105,7 +81,7 @@ export default {
         message: 'Thank you for your message! We will get back to you soon.',
         position: 'top'
       })
-      
+
       // Reset form
       form.value = {
         name: '',
@@ -122,4 +98,3 @@ export default {
   }
 }
 </script>
-

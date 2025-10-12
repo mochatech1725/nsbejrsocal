@@ -2,8 +2,8 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 q-mb-md">Gallery</h1>
-        
+        <h1 class="text-h3 page-title q-mb-md">Gallery</h1>
+
         <p class="text-body1 q-mb-lg">
           Explore photos and videos from our events, programs, and activities.
         </p>
@@ -79,4 +79,3 @@ export default {
   }
 }
 </script>
-

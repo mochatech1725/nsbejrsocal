@@ -2,8 +2,8 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 q-mb-md">Membership</h1>
-        
+        <h1 class="text-h3 page-title q-mb-md">Membership</h1>
+
         <q-card flat bordered class="q-mb-lg">
           <q-card-section>
             <h2 class="text-h5 q-mb-md">Join Our Chapter</h2>
@@ -40,7 +40,8 @@
               <q-card-section>
                 <div class="text-h6 q-mb-sm">How to Join</div>
                 <p class="text-body2">
-                  Contact us through our Contact page or attend one of our meetings to learn more about membership opportunities.
+                  Contact us through our Contact page or attend one of our meetings to learn more about membership
+                  opportunities.
                 </p>
                 <q-btn color="primary" label="Contact Us" :to="{ name: 'about-contact' }" class="q-mt-md" />
               </q-card-section>
@@ -57,4 +58,3 @@ export default {
   name: 'MembershipPage'
 }
 </script>
-

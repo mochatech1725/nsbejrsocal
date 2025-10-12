@@ -2,8 +2,8 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 q-mb-md">Events Calendar</h1>
-        
+        <h1 class="text-h3 page-title q-mb-md">Events Calendar</h1>
+
         <p class="text-body1 q-mb-lg">
           Stay up to date with all our chapter events, meetings, and activities.
         </p>
@@ -113,4 +113,3 @@ export default {
   }
 }
 </script>
-

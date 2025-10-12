@@ -1,0 +1,31 @@
+/**
+ * Global Styles
+ *
+ * Standardized styles used across the entire application.
+ * Changes made here will affect all pages that use these classes.
+ */
+
+/* ===================================
+   Page Title Styling
+   =================================== */
+
+/**
+ * .page-title
+ *
+ * Used for all main page headings (h1 elements).
+ *
+ * To change the color of ALL page titles across the site:
+ * Simply update the color value below.
+ *
+ * Current: #1976D2 (Primary Blue)
+ */
+.page-title {
+  color: #1976D2;
+}
+
+/* ===================================
+   Additional Global Classes
+   =================================== */
+
+/* Add more global utility classes below as needed */
+
