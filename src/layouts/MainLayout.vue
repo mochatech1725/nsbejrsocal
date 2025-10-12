@@ -98,13 +98,27 @@
       <router-view />
     </q-page-container>
 
-    <q-footer elevated class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <div class="text-center">
-            © {{ new Date().getFullYear() }} NSBE Jr. Chapter. All rights reserved.
+    <q-footer elevated class="footer-custom">
+      <q-toolbar class="footer-toolbar">
+        <div class="footer-content">
+          <!-- Logo -->
+          <div class="footer-logo">
+            <img src="@/assets/images/nsbe-jr-logo.png" alt="NSBE Jr. Logo" class="footer-logo-img" />
           </div>
-        </q-toolbar-title>
+
+          <!-- Copyright -->
+          <div class="footer-copyright">
+            © NSBE Jr. 2025
+          </div>
+
+          <!-- Social Links -->
+          <div class="footer-social">
+            <q-btn round dense icon="photo_camera" href="https://www.instagram.com/nsbejr/" target="_blank"
+              rel="noopener noreferrer" size="md">
+              <q-tooltip>Follow us on Instagram</q-tooltip>
+            </q-btn>
+          </div>
+        </div>
       </q-toolbar>
     </q-footer>
   </q-layout>
@@ -289,6 +303,71 @@ export default {
   .chapter-subtitle {
     font-size: 1.05rem;
     letter-spacing: 2.2px;
+  }
+}
+
+/* Footer Styling */
+.footer-custom {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-top: 3px solid #388E3C;
+}
+
+.footer-toolbar {
+  min-height: 60px;
+  padding: 12px 24px;
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-copyright {
+  flex: 1;
+  text-align: center;
+  color: #2E7D32;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+}
+
+.footer-social {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-social .q-btn {
+  background: #388E3C;
+  transition: all 0.3s ease;
+}
+
+.footer-social .q-btn:hover {
+  background: #2E7D32;
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-logo-img {
+    height: 32px;
+  }
+
+  .footer-copyright {
+    font-size: 0.85rem;
   }
 }
 </style>
