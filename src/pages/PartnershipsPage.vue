@@ -16,7 +16,7 @@
 
             <!-- Description Section -->
             <div class="partner-description">
-              <h3 class="text-h4 partner-heading q-mb-sm">A-MAN STEM Center</h3>
+              <h3 class="partner-heading q-mb-sm">A-MAN STEM Center</h3>
               <p class="text-body2 text-grey-7 q-mb-sm" style="line-height: 1.7;">
                 <strong>A-MAN, Inc.</strong> (All Colors One People) is a 501(c)(3) non-profit organization
                 founded by Dr. Bettye Walker and funded by UCLA. The Holman/A-MAN STEM Technology Center
@@ -45,7 +45,7 @@
 
             <!-- Description Section -->
             <div class="partner-description">
-              <h3 class="text-h4 partner-heading q-mb-sm">PS Science</h3>
+              <h3 class="partner-heading q-mb-sm">PS Science</h3>
               <p class="text-body2 text-grey-7 q-mb-sm" style="line-height: 1.7;">
                 PS Science brings hands-on STEM learning to elementary school children. They support classroom
                 teachers
@@ -75,7 +75,8 @@ export default {
 .partner-heading {
   font-family: 'Raleway', sans-serif;
   color: #388E3C;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 .partner-feature {
