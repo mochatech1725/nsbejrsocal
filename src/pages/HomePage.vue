@@ -46,7 +46,7 @@
 import { ref, onMounted } from 'vue'
 import NewsComponent from '../components/NewsComponent.vue'
 import EventsComponent from '../components/EventsComponent.vue'
-import { mockCmsService } from '../services'
+import { newsService, eventsService } from '../services'
 
 export default {
   name: 'HomePage',
@@ -62,10 +62,10 @@ export default {
     onMounted(async () => {
       try {
         // Fetch news items (limit to 10 to show items from all categories)
-        newsItems.value = await mockCmsService.getRecentNews(10)
+        newsItems.value = await newsService.getRecentNews(10)
 
         // Fetch upcoming events (limit to 12 to show all category types)
-        upcomingEvents.value = await mockCmsService.getUpcomingEvents(12)
+        upcomingEvents.value = await eventsService.getUpcomingEvents(12)
       } catch (error) {
         console.error('Failed to load data:', error)
       } finally {

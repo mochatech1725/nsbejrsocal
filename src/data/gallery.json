@@ -1,0 +1,49 @@
+{
+  "albums": [
+    {
+      "id": "album-meetings-1",
+      "title": "October General Meeting",
+      "date": "October 05, 2025",
+      "photoCount": 5,
+      "category": "meetings",
+      "coverImage": "/src/assets/images/gallery/IMG_3927.png",
+      "photos": [
+        {
+          "id": "photo-1",
+          "image": "/src/assets/images/gallery/IMG_3927.png",
+          "title": "Team Activity",
+          "date": "October 15, 2025",
+          "description": "Chapter members at the meeting"
+        },
+        {
+          "id": "photo-2",
+          "image": "/src/assets/images/gallery/IMG_3930.png",
+          "title": "Team Activity",
+          "date": "October 15, 2025",
+          "description": "Members collaborating on a project"
+        },
+        {
+          "id": "photo-3",
+          "image": "/src/assets/images/gallery/IMG_3935.png",
+          "title": "Team Activity",
+          "date": "October 15, 2025",
+          "description": "Members collaborating on a project"
+        },
+        {
+          "id": "photo-4",
+          "image": "/src/assets/images/gallery/IMG_3936.png",
+          "title": "Team Activity",
+          "date": "October 15, 2025",
+          "description": "Members collaborating on a project"
+        },
+        {
+          "id": "photo-5",
+          "image": "/src/assets/images/gallery/IMG_3939.png",
+          "title": "Team Activity",
+          "date": "October 15, 2025",
+          "description": "Members collaborating on a project"
+        }
+      ]
+    }
+  ]
+}

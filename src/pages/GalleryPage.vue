@@ -18,7 +18,7 @@
 <script>
 import { ref, onMounted } from 'vue'
 import GalleryComponent from '../components/GalleryComponent.vue'
-import { mockCmsService } from '../services'
+import { galleryService } from '../services'
 
 export default {
   name: 'GalleryPage',
@@ -38,7 +38,7 @@ export default {
     onMounted(async () => {
       try {
         // Fetch gallery items from CMS
-        galleryItems.value = await mockCmsService.getGalleryItems()
+        galleryItems.value = await galleryService.getGalleryItems()
       } catch (error) {
         console.error('Failed to load gallery items:', error)
       } finally {

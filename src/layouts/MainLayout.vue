@@ -32,7 +32,7 @@
 
           <q-btn flat label="News & Events" :to="{ name: 'events' }" />
 
-          <q-btn flat label="Competitions" :to="{ name: 'programs-competitions' }" />
+          <q-btn flat label="Competitions" :to="{ name: 'competitions' }" />
 
           <q-btn flat label="Partnerships" :to="{ name: 'partnerships' }" />
 
@@ -68,7 +68,7 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable :to="{ name: 'programs-competitions' }" v-close-popup>
+        <q-item clickable :to="{ name: 'competitions' }" v-close-popup>
           <q-item-section>
             <q-item-label>Competitions</q-item-label>
           </q-item-section>

@@ -96,10 +96,10 @@ export default {
     // Load all albums when component mounts
     const loadAllAlbums = async () => {
       try {
-        const { mockCmsService } = await import('../services')
-        const meetingsAlbums = await mockCmsService.getAlbumsByCategory('meetings')
-        const eventsAlbums = await mockCmsService.getAlbumsByCategory('events')
-        const competitionsAlbums = await mockCmsService.getAlbumsByCategory('competitions')
+        const { galleryService } = await import('../services')
+        const meetingsAlbums = await galleryService.getAlbumsByCategory('meetings')
+        const eventsAlbums = await galleryService.getAlbumsByCategory('events')
+        const competitionsAlbums = await galleryService.getAlbumsByCategory('competitions')
         albums.value = [...meetingsAlbums, ...eventsAlbums, ...competitionsAlbums]
       } catch (error) {
         console.error('Failed to load albums:', error)
