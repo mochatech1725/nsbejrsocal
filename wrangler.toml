@@ -1,6 +1,6 @@
 # Cloudflare Pages configuration
 [env.production]
-name = "nsbejr-website"
+name = "nsbejr-socal"
 compatibility_date = "2024-01-01"
 
 # Build settings
@@ -11,4 +11,4 @@ watch_dir = "src"
 
 # Pages settings
 [[pages]]
-name = "nsbejr-website"
+name = "nsbejr-socal"
