@@ -56,12 +56,17 @@
     <!-- Mobile Navigation Drawer -->
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered v-if="$q.screen.lt.md">
       <q-list>
+        <!-- Home -->
         <q-item clickable :to="{ name: 'home' }" v-close-popup>
+          <q-item-section avatar>
+            <q-icon name="home" />
+          </q-item-section>
           <q-item-section>
             <q-item-label>Home</q-item-label>
           </q-item-section>
         </q-item>
 
+        <!-- About Us -->
         <q-expansion-item label="About Us" icon="info">
           <q-item clickable :to="{ name: 'about-nsbe' }" v-close-popup>
             <q-item-section>About NSBE</q-item-section>
@@ -71,28 +76,44 @@
           </q-item>
         </q-expansion-item>
 
+        <!-- News & Events -->
         <q-item clickable :to="{ name: 'events' }" v-close-popup>
+          <q-item-section avatar>
+            <q-icon name="event" />
+          </q-item-section>
           <q-item-section>
             <q-item-label>News & Events</q-item-label>
           </q-item-section>
         </q-item>
 
+        <!-- Programs -->
         <q-expansion-item label="Programs" icon="school">
-          <q-item clickable :to="{ name: 'programs-calendar' }" v-close-popup>
-            <q-item-section>2025-2026 Calendar</q-item-section>
-          </q-item>
           <q-item clickable :to="{ name: 'programs-competitions' }" v-close-popup>
             <q-item-section>Competitions</q-item-section>
           </q-item>
+          <q-item clickable :to="{ name: 'programs-conventions' }" v-close-popup>
+            <q-item-section>Conventions</q-item-section>
+          </q-item>
+          <q-item clickable :to="{ name: 'programs-calendar' }" v-close-popup>
+            <q-item-section>2025-2026 Calendar</q-item-section>
+          </q-item>
         </q-expansion-item>
 
+        <!-- Partnerships -->
         <q-item clickable :to="{ name: 'partnerships' }" v-close-popup>
+          <q-item-section avatar>
+            <q-icon name="handshake" />
+          </q-item-section>
           <q-item-section>
             <q-item-label>Partnerships</q-item-label>
           </q-item-section>
         </q-item>
 
+        <!-- Gallery -->
         <q-item clickable :to="{ name: 'gallery' }" v-close-popup>
+          <q-item-section avatar>
+            <q-icon name="photo_library" />
+          </q-item-section>
           <q-item-section>
             <q-item-label>Gallery</q-item-label>
           </q-item-section>
