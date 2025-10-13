@@ -3,17 +3,11 @@
     <q-header elevated class="header-custom">
       <!-- Chapter Identity Section -->
       <div class="chapter-identity-section">
-        <router-link to="/" class="chapter-link">
-          <div class="chapter-content">
-            <img src="@/assets/images/nsbe-jr-socal-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
-            <div class="chapter-text">
-              <div class="chapter-main-title">Region VI Southern California Chapter</div>
-            </div>
-          </div>
-        </router-link>
-        <div class="header-partner-logo">
-          <img src="@/assets/images/nsbe-prof-logo.png" alt="NSBE Professionals Logo" class="partner-logo" />
+        <img src="@/assets/images/nsbe-jr-socal-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
+        <div class="chapter-text">
+          <div class="chapter-main-title">Region VI Southern California Chapter</div>
         </div>
+        <img src="@/assets/images/nsbe-prof-logo.png" alt="NSBE Professionals Logo" class="partner-logo" />
       </div>
 
       <!-- Navigation Bar -->
@@ -162,18 +156,9 @@ export default {
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.chapter-link {
-  text-decoration: none;
-  display: inline-block;
-  transition: opacity 0.3s ease;
-}
-
-.chapter-link:hover {
-  opacity: 0.8;
 }
 
 .header-partner-logo {
@@ -184,23 +169,20 @@ export default {
 .partner-logo {
   height: 60px;
   width: auto;
-}
-
-.chapter-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  position: absolute;
+  right: 16px;
 }
 
 .chapter-logo {
   height: 50px;
   width: auto;
   object-fit: contain;
+  position: absolute;
+  left: 16px;
 }
 
 .chapter-text {
-  text-align: left;
+  text-align: center;
 }
 
 .chapter-main-title {

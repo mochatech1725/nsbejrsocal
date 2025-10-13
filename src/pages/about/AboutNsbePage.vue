@@ -8,28 +8,10 @@
           <q-separator class="q-my-md" style="max-width: 100px; margin: 0 auto;" />
         </div>
 
-        <!-- NSBE Background Section - No Card -->
-        <div class="nsbe-background q-mb-xl q-pa-md">
-          <h2 class="text-h5 section-title q-mb-md text-center">National Society of Black Engineers</h2>
-          <div class="row justify-center">
-            <div class="col-12 col-md-9">
-              <p class="text-body2 text-grey-8 q-mb-md" style="line-height: 1.7;">
-                The National Society of Black Engineers (NSBE) is one of the largest student-governed organizations with
-                the aim of increasing the number of culturally responsible Black Engineers who excel academically,
-                succeed professionally and positively impact the community.
-              </p>
-              <p class="text-body2 text-grey-8" style="line-height: 1.7;">
-                Founded in 1975, NSBE now has more than 500 chapters and nearly 16,000 active members in the United
-                States and abroad. NSBE offers its members leadership training, professional development, mentoring
-                opportunities, career placement services and more.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mission and Vision Cards -->
-        <div class="row q-col-gutter-md q-mb-lg">
-          <div class="col-12 col-md-6">
+        <!-- Main Content with Mission/Vision on sides -->
+        <div class="row q-col-gutter-lg q-mb-xl">
+          <!-- Mission Card - Left -->
+          <div class="col-12 col-md-3">
             <q-card flat bordered class="mission-vision-card">
               <q-card-section class="card-header text-center q-py-md">
                 <div class="text-h6">Our Mission</div>
@@ -42,7 +24,26 @@
               </q-card-section>
             </q-card>
           </div>
+
+          <!-- Main NSBE Background Section - Center -->
           <div class="col-12 col-md-6">
+            <div class="nsbe-background q-pa-md">
+              <h2 class="text-h5 section-title q-mb-md text-center">National Society of Black Engineers</h2>
+              <p class="text-body2 text-grey-8 q-mb-md" style="line-height: 1.7;">
+                The National Society of Black Engineers (NSBE) is one of the largest student-governed organizations with
+                the aim of increasing the number of culturally responsible Black Engineers who excel academically,
+                succeed professionally and positively impact the community.
+              </p>
+              <p class="text-body2 text-grey-8" style="line-height: 1.7;">
+                Founded in 1975, NSBE now has more than 500 chapters and nearly 16,000 active members in the United
+                States and abroad. NSBE offers its members leadership training, professional development, mentoring
+                opportunities, career placement services and more.
+              </p>
+            </div>
+          </div>
+
+          <!-- Vision Card - Right -->
+          <div class="col-12 col-md-3">
             <q-card flat bordered class="mission-vision-card">
               <q-card-section class="card-header text-center q-py-md">
                 <div class="text-h6">Our Vision</div>
