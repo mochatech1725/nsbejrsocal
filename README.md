@@ -82,7 +82,7 @@ npm run preview
 
 ## Deployment
 
-This website is deployed using Netlify, which provides automatic builds, continuous deployment, and hosting for static websites.
+This website is deployed using Cloudflare Pages, which provides automatic builds, continuous deployment, and global CDN hosting for static websites.
 
 
 ## Project Structure
