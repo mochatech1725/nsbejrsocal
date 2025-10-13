@@ -4,9 +4,6 @@
       <div class="col-12 col-md-10">
         <h1 class="text-h3 page-title q-mb-sm text-center">Partnerships</h1>
 
-        <!-- Introduction -->
-
-
         <!-- Featured Partner: A-MAN STEM Center -->
         <div class="partner-feature q-mt-lg q-mb-lg">
           <div class="partner-content">
