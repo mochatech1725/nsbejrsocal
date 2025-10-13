@@ -20,7 +20,7 @@
     "eventName": "Youth and Family STEM Day",
     "icon": "school",
     "color": "primary",
-    "description": "inspiring afternoon of innovation, exploration, and community at Youth & Family Tech Day during Black LA Tech Week",
+    "description": "An inspiring afternoon of innovation, exploration, and community at Youth & Family Tech Day during Black LA Tech Week",
     "location": "Gathering Spot",
     "category": "general"
   },
@@ -40,9 +40,10 @@
     "id": "event-3",
     "date": "2026-03-18",
     "endDate": "2026-03-22",
-    "eventName": "NSBE 2026 Annual Convention",
+    "eventName": "NSBE 2026 National Convention",
     "description": "Join over 16,000 attendees for a transformative STEM experience. Theme: Advancing S.T.E.M. - Shaping the Future, Transforming Communities, Empowering Excellence, and Mobilizing Innovation.",
     "location": "Baltimore Convention Center, Baltimore, MD",
+    "link": "https://convention.nsbe.org/",
     "category": "convention"
   }
   ]

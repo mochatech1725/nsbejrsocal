@@ -2,10 +2,16 @@
   "news": [
     {
       "id": "news-3",
-      "title": "NSBE 2026 Annual Convention - March 18-22",
+      "title": "NSBE 2026 Annual Convention - March 18-22, 2026",
       "content": "Join over 16,000 attendees in Baltimore for #NSBE2026: Advancing S.T.E.M. Registration opens in October! Experience workshops, career fair, networking, and professional development at the Baltimore Convention Center.",
       "link": "https://convention.nsbe.org/",
-      "date": "2025-10-10",
+      "category": "convention"
+    },
+    {
+      "id": "news-3",
+      "title": "NSBE Region VI Regional Conference - Nov 21-23, 2025",
+      "content": "Regional Conference in Oakland, CA",
+      "link": "https://www.nsbe.org/regional-conferences/region-vi-2026-regional-conference",
       "category": "convention"
     }
   ]

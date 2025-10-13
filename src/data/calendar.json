@@ -1,0 +1,115 @@
+{
+  "organization": "NSBE Jr. Southern California Chapter",
+  "year": "2025-2026",
+  "events": [
+    {
+      "date": "2025-09-07",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Family Orientation + Intro to Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-09-21",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Software Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-10-05",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Computer Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-10-19",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Computer Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-11-02",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Civil Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-11-16",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Civil Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-12-07",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Mechanical Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2025-12-14",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Mechanical Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-01-11",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Electrical Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-01-25",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Electrical Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-02-08",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Chemical & Environmental Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-02-15",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Chemical & Environmental Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-03-08",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Bioengineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-03-19",
+      "endDate": "2026-03-22",
+      "time": "Overnight Trip",
+      "activity": "NSBE National Convention",
+      "location": "Baltimore, MD"
+    },
+    {
+      "date": "2026-04-12",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Aerospace Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-04-26",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Aerospace Engineering",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-05-03",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Robotics",
+      "location": "A-MAN STEM Center"
+    },
+    {
+      "date": "2026-05-17",
+      "time": "1:00 pm - 4:00 pm",
+      "activity": "Robotics",
+      "location": "A-MAN STEM Center"
+    }
+  ]
+}

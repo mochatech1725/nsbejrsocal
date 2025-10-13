@@ -5,12 +5,15 @@
       <div class="chapter-identity-section">
         <router-link to="/" class="chapter-link">
           <div class="chapter-content">
-            <img src="@/assets/images/nsbe-jr-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
+            <img src="@/assets/images/nsbe-jr-socal-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
             <div class="chapter-text">
               <div class="chapter-main-title">Region VI Southern California Chapter</div>
             </div>
           </div>
         </router-link>
+        <div class="header-partner-logo">
+          <img src="@/assets/images/nsbe-prof-logo.png" alt="NSBE Professionals Logo" class="partner-logo" />
+        </div>
       </div>
 
       <!-- Navigation Bar -->
@@ -32,7 +35,19 @@
 
           <q-btn flat label="News & Events" :to="{ name: 'events' }" />
 
-          <q-btn flat label="Competitions" :to="{ name: 'competitions' }" />
+          <q-btn-dropdown flat label="Programs">
+            <q-list>
+              <q-item clickable v-close-popup :to="{ name: 'programs-competitions' }">
+                <q-item-section>Competitions</q-item-section>
+              </q-item>
+              <q-item clickable v-close-popup :to="{ name: 'programs-conventions' }">
+                <q-item-section>Conventions</q-item-section>
+              </q-item>
+              <q-item clickable v-close-popup :to="{ name: 'programs-calendar' }">
+                <q-item-section>2025-2026 Calendar</q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
 
           <q-btn flat label="Partnerships" :to="{ name: 'partnerships' }" />
 
@@ -68,11 +83,14 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable :to="{ name: 'competitions' }" v-close-popup>
-          <q-item-section>
-            <q-item-label>Competitions</q-item-label>
-          </q-item-section>
-        </q-item>
+        <q-expansion-item label="Programs" icon="school">
+          <q-item clickable :to="{ name: 'programs-calendar' }" v-close-popup>
+            <q-item-section>2025-2026 Calendar</q-item-section>
+          </q-item>
+          <q-item clickable :to="{ name: 'programs-competitions' }" v-close-popup>
+            <q-item-section>Competitions</q-item-section>
+          </q-item>
+        </q-expansion-item>
 
         <q-item clickable :to="{ name: 'partnerships' }" v-close-popup>
           <q-item-section>
@@ -97,7 +115,7 @@
         <div class="footer-content">
           <!-- Logo -->
           <div class="footer-logo">
-            <img src="@/assets/images/nsbe-jr-logo.png" alt="NSBE Jr. Logo" class="footer-logo-img" />
+            <img src="@/assets/images/nsbe-jr-socal-logo.png" alt="NSBE Jr. Logo" class="footer-logo-img" />
           </div>
 
           <!-- Copyright -->
@@ -142,7 +160,9 @@ export default {
 .chapter-identity-section {
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
   padding: 16px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -154,6 +174,16 @@ export default {
 
 .chapter-link:hover {
   opacity: 0.8;
+}
+
+.header-partner-logo {
+  display: flex;
+  align-items: center;
+}
+
+.partner-logo {
+  height: 60px;
+  width: auto;
 }
 
 .chapter-content {
@@ -267,6 +297,12 @@ export default {
 @media (max-width: 600px) {
   .chapter-identity-section {
     padding: 10px 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .partner-logo {
+    height: 40px;
   }
 
   .chapter-content {

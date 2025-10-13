@@ -14,7 +14,10 @@ const routes = [
 
       { path: '/events', name: 'events', component: () => import('../pages/EventsPage.vue') },
 
-      { path: '/competitions', name: 'competitions', component: () => import('../pages/CompetitionsPage.vue') },
+      // Programs
+      { path: '/programs/competitions', name: 'programs-competitions', component: () => import('../pages/CompetitionsPage.vue') },
+      { path: '/programs/conventions', name: 'programs-conventions', component: () => import('../pages/ConventionsPage.vue') },
+      { path: '/programs/calendar', name: 'programs-calendar', component: () => import('../pages/CalendarPage.vue') },
 
       { path: '/partnerships', name: 'partnerships', component: () => import('../pages/PartnershipsPage.vue') },
 

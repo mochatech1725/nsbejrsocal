@@ -8,8 +8,6 @@
 import { EventItem, EventCategory } from './types';
 // @ts-ignore - JSON import
 import eventsData from '../data/events.json';
-// @ts-ignore - JSON import
-import meetingEventsData from '../data/meeting.events.json';
 
 /**
  * Abstract Events Data Source
@@ -21,17 +19,15 @@ export abstract class EventsDataSource {
 
 /**
  * JSON Events Data Source
- * Fetches events from JSON files (both events.json and meeting.events.json)
+ * Fetches events from JSON files
  */
 export class JsonEventsDataSource extends EventsDataSource {
   async fetchEvents(): Promise<EventItem[]> {
     // Simulate async delay
     await new Promise(resolve => setTimeout(resolve, 100));
 
-    // Combine events from both files
-    const regularEvents = (eventsData.events as any[]) || [];
-    const meetingEvents = (meetingEventsData.meetings as any[]) || [];
-    const allEvents = [...regularEvents, ...meetingEvents];
+    // Get events from events.json
+    const allEvents = (eventsData.events as any[]) || [];
 
     return allEvents.map(event => {
       const category = (event.category || 'monthly') as EventCategory;
@@ -46,6 +42,7 @@ export class JsonEventsDataSource extends EventsDataSource {
         endTime: event.endTime,
         location: event.location,
         address: event.address,
+        link: event.link,
         icon: event.icon || this.getCategoryIcon(category),
         color: event.color || this.getCategoryColor(category),
         category

@@ -12,6 +12,35 @@
           </p>
         </div>
 
+        <!-- Featured Partner: A-MAN STEM Center -->
+        <div class="partner-feature q-mt-lg q-mb-lg">
+          <div class="partner-content">
+            <!-- Logo Section -->
+            <div class="partner-logo-section">
+              <a href="https://aman.org/" target="_blank" rel="noopener noreferrer">
+                <img src="@/assets/images/a-man-stem-logo.png" alt="A-MAN STEM Center Logo" class="partner-logo" />
+              </a>
+            </div>
+
+            <!-- Description Section -->
+            <div class="partner-description">
+              <h3 class="text-h4 partner-heading q-mb-sm">A-MAN STEM Center</h3>
+              <p class="text-body2 text-grey-7 q-mb-sm" style="line-height: 1.7;">
+                <strong>A-MAN, Inc.</strong> (All Colors One People) is a 501(c)(3) non-profit organization
+                founded by Dr. Bettye Walker and funded by UCLA. The Holman/A-MAN STEM Technology Center
+                provides state-of-the-art facilities at the Edgar Love Education Building, serving as the
+                perfect environment for our engineering workshops and activities.
+              </p>
+              <p class="text-body2 text-grey-7 q-mb-md" style="line-height: 1.7;">
+                A-MAN's mission of "All Colors One People" aligns perfectly with NSBE's commitment to
+                increasing the number of culturally responsible Black engineers. Their STEM programs include
+                the Saturday Science Academy, Laser Technology, and the A-MAN Replication Program, providing
+                our members with hands-on learning experiences and cutting-edge technology access.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Featured Partner: PS Science -->
         <div class="partner-feature q-mt-lg q-mb-lg">
           <div class="partner-content">

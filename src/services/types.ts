@@ -26,6 +26,7 @@ export type EventItem = {
   endTime?: string;
   location?: string;
   address?: string;
+  link?: string; // Optional link for more information
   icon: string;
   color: string;
   category: EventCategory;

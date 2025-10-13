@@ -1,13 +1,13 @@
 <template>
   <q-item>
     <q-item-section>
-      <q-item-label class="text-h6 text-weight-medium q-mb-xs">
-        {{ news.title }}
+      <q-item-label class="news-title">
+        <a v-if="news.link" :href="news.link" target="_blank" rel="noopener noreferrer" class="news-link">
+          {{ news.title }}
+        </a>
+        <span v-else>{{ news.title }}</span>
       </q-item-label>
-      <q-item-label caption class="text-grey-8 text-weight-bold q-mb-xs">
-        {{ formatDate(news.date) }}
-      </q-item-label>
-      <q-item-label caption lines="2" class="text-body2">
+      <q-item-label class="news-content q-mt-sm">
         {{ news.content }}
       </q-item-label>
     </q-item-section>
@@ -22,24 +22,35 @@ export default {
       type: Object,
       required: true
     }
-  },
-  setup() {
-    // Helper function to format date
-    const formatDate = (dateString) => {
-      const date = new Date(dateString + 'T00:00:00')
-      const options = { year: 'numeric', month: 'short', day: 'numeric' }
-      return date.toLocaleDateString('en-US', options)
-    }
-
-    return {
-      formatDate
-    }
   }
 }
 </script>
 
 <style scoped>
-.text-h6 {
+.news-title {
   font-family: 'Raleway', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+}
+
+.news-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.news-link:hover {
+  color: #2E7D32;
+  text-decoration: underline;
+}
+
+.news-content {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
 }
 </style>
