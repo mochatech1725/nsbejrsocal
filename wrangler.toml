@@ -1,14 +1,9 @@
-# Cloudflare Pages configuration
-[env.production]
-name = "nsbejr-socal"
+name = "nsbejrsocal"
 compatibility_date = "2024-01-01"
 
-# Build settings
+# Specify where your built files are located
+pages_build_output_dir = "dist"
+
+# Optional: Build configuration
 [build]
 command = "npm run build"
-cwd = "."
-watch_dir = "src"
-
-# Pages settings
-[[pages]]
-name = "nsbejr-socal"
