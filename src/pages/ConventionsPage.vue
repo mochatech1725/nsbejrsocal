@@ -43,7 +43,7 @@
         <div class="competition-details-section q-mb-lg">
           <q-card bordered class="convention-card">
             <q-card-section class="q-pa-lg">
-              <h3 class="convention-title q-mb-md text-center">Convention Competition Details</h3>
+              <h3 class="convention-title q-mb-md text-center">Competition Details</h3>
 
               <div class="competition-item q-mb-md">
                 <h4 class="competition-name">Try-Math-A-Lon</h4>
