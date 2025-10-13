@@ -6,7 +6,8 @@ const routes = [
     path: '/',
     component: MainLayout,
     children: [
-      { path: '', name: 'home', component: () => import('../pages/HomePage.vue') },
+      { path: '', redirect: '/about/about-nsbe' },
+      { path: '/home', name: 'home', component: () => import('../pages/HomePage.vue') },
 
             // About Us
             { path: '/about/about-nsbe', name: 'about-nsbe', component: () => import('../pages/about/AboutNsbePage.vue') },
