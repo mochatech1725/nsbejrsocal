@@ -1,10 +1,19 @@
 {
   "news": [
     {
-      "id": "news-3",
+      "id": "news-1",
+      "title": "Try-Math-A-Lon Pre-PAT Exams Due November 12, 2025",
+      "content": "Teams participating in Try-Math-A-Lon must complete their Pre-PAT exams by November 12, 2025. Visit the Conventions page for direct links to the Lower Division and Upper Division exams. Don't miss this important deadline!",
+      "link": "/programs/conventions",
+      "date": "2025-10-13",
+      "category": "competition"
+    },
+    {
+      "id": "news-2",
       "title": "NSBE 2026 Annual Convention - March 18-22, 2026",
-      "content": "Join over 16,000 attendees in Baltimore for #NSBE2026: Advancing S.T.E.M. Registration opens in October! Experience workshops, career fair, networking, and professional development at the Baltimore Convention Center.",
+      "content": "Join over 16,000 attendees in Baltimore for NSBE 2026 National Convention. Registration opens in October! Experience workshops, career fair, networking, and professional development at the Baltimore Convention Center.",
       "link": "https://convention.nsbe.org/",
+      "date": "2025-10-10",
       "category": "convention"
     },
     {
@@ -12,6 +21,7 @@
       "title": "NSBE Region VI Regional Conference - Nov 21-23, 2025",
       "content": "Regional Conference in Oakland, CA",
       "link": "https://www.nsbe.org/regional-conferences/region-vi-2026-regional-conference",
+      "date": "2025-10-05",
       "category": "convention"
     }
   ]

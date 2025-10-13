@@ -2,7 +2,7 @@
   <q-page class="q-pa-md">
     <div class="row justify-center">
       <div class="col-12 col-md-10">
-        <h1 class="text-h3 page-title q-mb-md text-center">NSBE Jr. Southern California Chapter Calendar (2025-2026)
+        <h1 class="text-h3 page-title q-mb-md text-center">NSBE Jr. Southern California Chapter Calendar 2025-2026
         </h1>
 
         <!-- A-MAN STEM Center Partnership Info -->

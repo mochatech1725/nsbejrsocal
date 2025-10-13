@@ -5,12 +5,7 @@
         <h1 class="text-h3 page-title q-mb-sm text-center">Partnerships</h1>
 
         <!-- Introduction -->
-        <div class="text-center q-mb-md">
-          <p class="text-body2 text-grey-7" style="max-width: 700px; margin: 0 auto;">
-            We collaborate with organizations dedicated to STEM education to provide our members
-            with enriching experiences and opportunities that inspire the next generation of engineers.
-          </p>
-        </div>
+
 
         <!-- Featured Partner: A-MAN STEM Center -->
         <div class="partner-feature q-mt-lg q-mb-lg">
@@ -55,13 +50,15 @@
             <div class="partner-description">
               <h3 class="text-h4 partner-heading q-mb-sm">PS Science</h3>
               <p class="text-body2 text-grey-7 q-mb-sm" style="line-height: 1.7;">
-                PS Science brings hands-on STEM learning to elementary school children. They support classroom teachers
-                and community educators with lessons, materials, and training to ensure all kids have an equal chance
+                PS Science brings hands-on STEM learning to elementary school children. They support classroom
+                teachers
+                and community educators with lessons, materials, and training to ensure all kids have an equal
+                chance
                 at the STEM careers of the future.
               </p>
               <p class="text-body2 text-grey-7 q-mb-md" style="line-height: 1.7;">
                 Through our partnership, our chapter members gain access to high-quality STEM education
-                resources, engaging learning experiences, and opportunities to develop critical thinking skills.
+                resources, engaging learning experiences and opportunities to develop critical thinking skills.
               </p>
             </div>
           </div>
@@ -113,7 +110,7 @@ export default {
 }
 
 .partner-logo {
-  max-width: 120px;
+  max-width: 80px;
   width: 100%;
   height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -154,11 +151,11 @@ export default {
 
 @media (min-width: 1024px) {
   .partner-logo {
-    max-width: 140px;
+    max-width: 100px;
   }
 
   .partner-logo-section {
-    flex: 0 0 180px;
+    flex: 0 0 140px;
   }
 }
 </style>

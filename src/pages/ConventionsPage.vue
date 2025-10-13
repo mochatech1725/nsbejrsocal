@@ -39,6 +39,46 @@
           </q-card>
         </div>
 
+        <!-- Convention Competition Details -->
+        <div class="competition-details-section q-mb-lg">
+          <q-card bordered class="convention-card">
+            <q-card-section class="q-pa-lg">
+              <h3 class="convention-title q-mb-md text-center">Convention Competition Details</h3>
+
+              <div class="competition-item q-mb-md">
+                <h4 class="competition-name">Try-Math-A-Lon</h4>
+                <p class="competition-subtitle q-mb-sm"><strong>Teams: Pre-PAT Exams</strong></p>
+
+                <div class="deadlines q-mb-md">
+                  <div class="deadline-item">
+                    <q-icon name="event" color="orange" size="20px" class="q-mr-xs" />
+                    <span class="deadline-text">Complete Pre-PAT no later than <strong>November 12, 2025</strong></span>
+                  </div>
+                  <div class="deadline-item">
+                    <q-icon name="event" color="orange" size="20px" class="q-mr-xs" />
+                    <span class="deadline-text">Complete Official PAT no later than <strong>January 14,
+                        2026</strong></span>
+                  </div>
+                </div>
+
+                <div class="exam-links">
+                  <div class="exam-link-item q-mb-sm">
+                    <span class="exam-label">PAT EXAM Lower Division:</span>
+                    <q-btn flat dense color="primary" label="Take Exam" href="https://forms.office.com/r/4C9xGhW4iL"
+                      target="_blank" rel="noopener noreferrer" icon-right="open_in_new" class="q-ml-sm" />
+                  </div>
+
+                  <div class="exam-link-item">
+                    <span class="exam-label">PAT EXAM Upper Division:</span>
+                    <q-btn flat dense color="primary" label="Take Exam" href="https://forms.office.com/r/rJNkZHhpFY"
+                      target="_blank" rel="noopener noreferrer" icon-right="open_in_new" class="q-ml-sm" />
+                  </div>
+                </div>
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+
       </div>
     </div>
   </q-page>
@@ -106,5 +146,60 @@ export default {
 
 .convention-links {
   margin-top: 1.5rem;
+}
+
+.competition-name {
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.competition-subtitle {
+  font-family: 'Raleway', sans-serif;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.deadlines {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.deadline-item:last-child {
+  margin-bottom: 0;
+}
+
+.deadline-text {
+  font-family: 'Raleway', sans-serif;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.exam-links {
+  margin-top: 1rem;
+}
+
+.exam-link-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.exam-label {
+  font-family: 'Raleway', sans-serif;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 </style>

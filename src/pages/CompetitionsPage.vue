@@ -18,16 +18,27 @@
         </div>
 
         <div class="row q-col-gutter-md">
-          <div v-for="competition in competitions" :key="competition.id" class="col-12 col-md-6">
-            <q-card flat bordered>
+          <div v-for="(competition, index) in competitions" :key="index" class="col-12 col-md-6">
+            <q-card flat bordered class="competition-card">
               <q-card-section>
-                <div class="text-h6 q-mb-sm">
-                  <q-icon :name="competition.icon" :color="competition.color" /> {{ competition.title }}
+                <div class="competition-name q-mb-sm">
+                  <a v-if="competition.link" :href="competition.link" target="_blank" rel="noopener noreferrer"
+                    class="competition-link">
+                    {{ competition.name }}
+                    <q-icon name="open_in_new" size="18px" class="link-icon" />
+                  </a>
+                  <span v-else>{{ competition.name }}</span>
                 </div>
-                <div class="text-body2 q-mb-sm">{{ competition.description }}</div>
-                <q-chip v-if="competition.level" :color="competition.levelColor" text-color="white" size="sm">
-                  {{ competition.level }}
-                </q-chip>
+                <div class="competition-meta q-mb-sm">
+                  <span class="meta-item"><strong>Category:</strong> {{ competition.category }}</span>
+                  <span class="meta-separator">|</span>
+                  <span class="meta-item"><strong>Grade Level:</strong> {{ competition.gradeLevel }}</span>
+                  <span class="meta-separator">|</span>
+                  <span class="meta-item"><strong>Team Size:</strong> {{ competition.teamSize }}</span>
+                  <span class="meta-separator">|</span>
+                  <span class="meta-item"><strong>Experience Level:</strong> {{ competition.experienceLevel }}</span>
+                </div>
+                <div class="competition-description">{{ competition.description }}</div>
               </q-card-section>
             </q-card>
           </div>
@@ -39,30 +50,12 @@
 
 <script>
 import { ref } from 'vue'
+import competitionsData from '../data/nsbe_competitions.json'
 
 export default {
   name: 'CompetitionsPage',
   setup() {
-    const competitions = ref([
-      {
-        id: 2,
-        title: 'Robotics Competitions',
-        description: 'FIRST Robotics, VEX Robotics, and other robotics challenges.',
-        icon: 'smart_toy',
-        color: 'secondary',
-        level: 'Regional & National',
-        levelColor: 'orange'
-      },
-      {
-        id: 4,
-        title: 'Math Olympiad',
-        description: 'Test mathematical problem-solving skills in team and individual formats.',
-        icon: 'calculate',
-        color: 'positive',
-        level: 'Regional',
-        levelColor: 'blue'
-      }
-    ])
+    const competitions = ref(competitionsData.competitions)
 
     return {
       competitions
@@ -94,5 +87,69 @@ export default {
   line-height: 1.9;
   font-size: 1.05rem;
   text-align: center;
+}
+
+.competition-card {
+  background: #ffffff;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.competition-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.competition-name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #388E3C;
+  line-height: 1.4;
+}
+
+.competition-link {
+  color: #388E3C;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.competition-link:hover {
+  color: #2E7D32;
+  text-decoration: underline;
+}
+
+.link-icon {
+  transition: transform 0.3s ease;
+}
+
+.competition-link:hover .link-icon {
+  transform: translateX(2px) translateY(-2px);
+}
+
+.competition-meta {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.meta-item {
+  display: inline;
+}
+
+.meta-separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+.competition-description {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
 }
 </style>

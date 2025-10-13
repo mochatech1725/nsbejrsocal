@@ -59,3 +59,13 @@ export type GalleryAlbum = {
   photos: GalleryPhoto[];
 }
 
+export type CompetitionItem = {
+  name: string;
+  category: string;
+  gradeLevel: string;
+  description: string;
+  teamSize: string;
+  experienceLevel: string;
+  link?: string;
+}
+

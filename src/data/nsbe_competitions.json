@@ -1,0 +1,59 @@
+{
+  "competitions": [
+    {
+      "name": "VEX IQ Challenge",
+      "category": "Elementary/Middle School",
+      "gradeLevel": "3-8",
+      "description": "Teams design and build a robot to play with other teams in a game-based engineering challenge. NSBE's VEX IQ Tournament is held at the Annual Convention.",
+      "teamSize": "2-10 students",
+      "experienceLevel": "Intermediate",
+      "link": "https://robotevents.com/"
+    },
+    {
+      "name": "MATHCOUNTS",
+      "category": "Elementary/Middle School",
+      "gradeLevel": "6-8",
+      "description": "Students spend the year completing thought provoking, non-routine, fun math problems that support them in becoming better problem solvers. Participants complete a circuit of math exams at NSBE's Annual Convention.",
+      "teamSize": "4 students",
+      "experienceLevel": "New",
+      "link": "https://mathcounts.org/"
+    },
+    {
+      "name": "Ten80 Student Racing Challenge",
+      "category": "Middle School/High School",
+      "gradeLevel": "6-12",
+      "description": "Teams use model radio-controlled cars and mimic professional motorsport teams as they learn the fundamentals of problem solving, data and mechanical systems, project management, marketing and business. NSBE's Ten80 Challenge finals are held at the Annual Convention.",
+      "teamSize": "4-15 students",
+      "experienceLevel": "Experienced",
+      "link": "https://www.ten80education.com/"
+    },
+    {
+      "name": "KidWind Challenge",
+      "category": "Middle School/High School",
+      "gradeLevel": "4-8, 9-12",
+      "description": "Teams build a small turbine to produce as much power as possible, and then consider the best construction techniques and the most innovative design to make their turbine operate. NSBE's KidWind Challenge competition takes place at the Annual Convention.",
+      "teamSize": "2-4 students",
+      "experienceLevel": "Intermediate",
+      "link": "https://www.kidwind.org/"
+    },
+    {
+      "name": "Try-Math-A-Lon",
+      "category": "High School",
+      "gradeLevel": "9-12",
+      "description": "Teams earn points by engaging in various math activities that groom them for success in STEM courses, help prepare them for the ACT and SAT, and promote good sportsmanship. Participants compete year-round and advance to a final competition at the Annual Convention. *Each team is required to consist of four (4) students and one (1) mandatory alternate.",
+      "teamSize": "4 students (1 alternate is allowed)",
+      "experienceLevel": "New",
+      "link": "https://nsbe.org/program/tmal/"
+
+    },
+    {
+      "name": "VEX Robotics Challenge",
+      "category": "High School",
+      "gradeLevel": "9-12",
+      "description": "Teams build innovative robots and compete in a variety of matches during the school year as they learn skills in engineering, project management, critical thinking and perseverance. NSBE's VEX Robotics Championship is held at the Annual Convention.",
+      "teamSize": "4-10",
+      "experienceLevel": "Experienced",
+      "link": "https://robotevents.com/"
+    }
+  ]
+}
