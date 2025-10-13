@@ -22,11 +22,11 @@
           </q-list>
         </q-expansion-item>
 
-        <!-- Conference News Section -->
-        <q-expansion-item v-if="conferencesNews.length > 0" default-opened expand-separator icon="school"
-          label="Conferences" header-class="bg-grey-3 section-header">
+        <!-- Convention News Section -->
+        <q-expansion-item v-if="conventionNews.length > 0" default-opened expand-separator icon="school"
+          label="Convention" header-class="bg-grey-3 section-header">
           <q-list separator>
-            <NewsItem v-for="news in conferencesNews" :key="news.id" :news="news" />
+            <NewsItem v-for="news in conventionNews" :key="news.id" :news="news" />
           </q-list>
         </q-expansion-item>
       </q-list>
@@ -64,14 +64,14 @@ export default {
       props.newsItems.filter(item => item.category === 'competition')
     )
 
-    const conferencesNews = computed(() =>
-      props.newsItems.filter(item => item.category === 'conferences')
+    const conventionNews = computed(() =>
+      props.newsItems.filter(item => item.category === 'convention')
     )
 
     return {
       generalNews,
       competitionNews,
-      conferencesNews
+      conventionNews
     }
   }
 }

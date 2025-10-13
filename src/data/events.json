@@ -1,167 +1,49 @@
 {
   "events": [
-    {
-      "id": "event-1",
-      "date": "2025-09-07",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Family Orientation + Intro to Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-2",
-      "date": "2025-09-21",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Software Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-3",
-      "date": "2025-10-05",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Computer Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-4",
-      "date": "2025-10-19",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Computer Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-5",
-      "date": "2025-11-02",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Civil Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-6",
-      "date": "2025-11-16",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Civil Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-7",
-      "date": "2025-12-07",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Mechanical Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-8",
-      "date": "2025-12-14",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Mechanical Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-9",
-      "date": "2026-01-11",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Electrical Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-10",
-      "date": "2026-01-25",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Electrical Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-11",
-      "date": "2026-02-08",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Chemical & Environmental Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-12",
-      "date": "2026-02-15",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Chemical & Environmental Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-13",
-      "date": "2026-03-08",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Bioengineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-14",
-      "date": "2026-03-19",
-      "endDate": "2026-03-22",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "NSBE National Convention",
-      "location": "Baltimore, MD",
-      "category": "monthly"
-    },
-    {
-      "id": "event-15",
-      "date": "2026-04-12",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Aerospace Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-16",
-      "date": "2026-04-26",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Aerospace Engineering",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-17",
-      "date": "2026-05-03",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Robotics",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    },
-    {
-      "id": "event-18",
-      "date": "2026-05-17",
-      "startTime": "1:00 pm",
-      "endTime": "4:00 pm",
-      "description": "Robotics",
-      "location": "A-MAN STEM Center",
-      "category": "monthly"
-    }
+  {
+    "id": "event-1",
+    "date": "2025-10-11",
+    "startTime": "2:00 pm",
+    "endTime": "4:00 pm",
+    "eventName": "College Readiness Workshop Series",
+    "icon": "school",
+    "color": "primary",
+    "description": "Online portion, reading and refining essays talking about finding the correct college fit, ect",
+    "location": "Virtual Meeting",
+    "category": "general"
+  },
+  {
+    "id": "event-1",
+    "date": "2025-10-12",
+    "startTime": "2:00 pm",
+    "endTime": "4:00 pm",
+    "eventName": "Youth and Family STEM Day",
+    "icon": "school",
+    "color": "primary",
+    "description": "inspiring afternoon of innovation, exploration, and community at Youth & Family Tech Day during Black LA Tech Week",
+    "location": "Gathering Spot",
+    "category": "general"
+  },
+  {
+    "id": "event-2",
+    "date": "2025-10-18",
+    "startTime": "11:00 am",
+    "endTime": "3:00 pm",
+    "eventName": "College Readiness Workshop Series",
+    "icon": "school",
+    "color": "primary",
+    "description": "In-Person portion, tours of USCs campus, engineering activity on campus, speaking to different engineering majors on campus",
+    "location": "USC Campus",
+    "category": "general"
+  },
+  {
+    "id": "event-3",
+    "date": "2026-03-18",
+    "endDate": "2026-03-22",
+    "eventName": "NSBE 2026 Annual Convention",
+    "description": "Join over 16,000 attendees for a transformative STEM experience. Theme: Advancing S.T.E.M. - Shaping the Future, Transforming Communities, Empowering Excellence, and Mobilizing Innovation.",
+    "location": "Baltimore Convention Center, Baltimore, MD",
+    "category": "convention"
+  }
   ]
 }

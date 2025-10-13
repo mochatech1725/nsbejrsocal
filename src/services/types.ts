@@ -3,8 +3,8 @@
  */
 
 // Category Types
-export type NewsCategory = 'general' | 'competition' | 'conferences';
-export type EventCategory = 'monthly' | 'general' | 'conference' | 'competition';
+export type NewsCategory = 'general' | 'competition' | 'convention';
+export type EventCategory = 'monthly' | 'general' | 'convention' | 'competition';
 
 export type NewsItem = {
   id: string;
@@ -18,9 +18,10 @@ export type NewsItem = {
 
 export type EventItem = {
   id: string;
-  title?: string;
+  eventName?: string;
   description: string;
-  date: Date; // Date object
+  date: Date; // Date object (start date)
+  endDate?: Date; // Optional end date for multi-day events
   startTime?: string;
   endTime?: string;
   location?: string;

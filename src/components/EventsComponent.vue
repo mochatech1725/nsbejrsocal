@@ -14,11 +14,11 @@
           </q-list>
         </q-expansion-item>
 
-        <!-- Conferences Section -->
-        <q-expansion-item v-if="conferences.length > 0" default-opened expand-separator icon="school"
-          label="Conferences" header-class="bg-grey-3 section-header">
+        <!-- Convention Section -->
+        <q-expansion-item v-if="conventions.length > 0" default-opened expand-separator icon="school" label="Convention"
+          header-class="bg-grey-3 section-header">
           <q-list separator>
-            <EventItem v-for="event in conferences" :key="event.id" :event="event" />
+            <EventItem v-for="event in conventions" :key="event.id" :event="event" />
           </q-list>
         </q-expansion-item>
 
@@ -72,8 +72,8 @@ export default {
       props.events.filter(event => event.category === 'general')
     )
 
-    const conferences = computed(() =>
-      props.events.filter(event => event.category === 'conference')
+    const conventions = computed(() =>
+      props.events.filter(event => event.category === 'convention')
     )
 
     const competitions = computed(() =>
@@ -83,7 +83,7 @@ export default {
     return {
       monthlyMeetings,
       generalEvents,
-      conferences,
+      conventions,
       competitions
     }
   }

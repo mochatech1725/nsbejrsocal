@@ -8,6 +8,8 @@
 import { EventItem, EventCategory } from './types';
 // @ts-ignore - JSON import
 import eventsData from '../data/events.json';
+// @ts-ignore - JSON import
+import meetingEventsData from '../data/meeting.events.json';
 
 /**
  * Abstract Events Data Source
@@ -19,21 +21,27 @@ export abstract class EventsDataSource {
 
 /**
  * JSON Events Data Source
- * Fetches events from JSON file
+ * Fetches events from JSON files (both events.json and meeting.events.json)
  */
 export class JsonEventsDataSource extends EventsDataSource {
   async fetchEvents(): Promise<EventItem[]> {
     // Simulate async delay
     await new Promise(resolve => setTimeout(resolve, 100));
 
-    return (eventsData.events as any[]).map(event => {
+    // Combine events from both files
+    const regularEvents = (eventsData.events as any[]) || [];
+    const meetingEvents = (meetingEventsData.meetings as any[]) || [];
+    const allEvents = [...regularEvents, ...meetingEvents];
+
+    return allEvents.map(event => {
       const category = (event.category || 'monthly') as EventCategory;
 
       return {
         id: event.id,
-        title: event.title,
+        eventName: event.eventName,
         description: event.description,
         date: new Date(event.date + 'T00:00:00'),
+        endDate: event.endDate ? new Date(event.endDate + 'T00:00:00') : undefined,
         startTime: event.startTime,
         endTime: event.endTime,
         location: event.location,
@@ -49,7 +57,7 @@ export class JsonEventsDataSource extends EventsDataSource {
     const icons: Record<EventCategory, string> = {
       monthly: 'groups',
       general: 'event',
-      conference: 'school',
+      convention: 'school',
       competition: 'emoji_events'
     };
     return icons[category] || 'event';
@@ -59,7 +67,7 @@ export class JsonEventsDataSource extends EventsDataSource {
     const colors: Record<EventCategory, string> = {
       monthly: 'primary',
       general: 'primary',
-      conference: 'accent',
+      convention: 'accent',
       competition: 'positive'
     };
     return colors[category] || 'primary';

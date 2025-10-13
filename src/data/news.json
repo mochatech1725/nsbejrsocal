@@ -1,84 +1,12 @@
 {
   "news": [
     {
-      "id": "news-1",
-      "title": "NSBE Jr. Chapter Wins Regional Competition",
-      "content": "Our chapter placed first in the Regional Science Olympiad! Congratulations to all participants for their dedication and hard work.",
-      "link": "#",
-      "date": "2025-10-15",
-      "category": "competition"
-    },
-    {
-      "id": "news-2",
-      "title": "New STEM Workshop Series Announced",
-      "content": "Join us for a series of hands-on STEM workshops starting next month! Topics include robotics, coding, and engineering design.",
-      "link": "#",
-      "date": "2025-10-12",
-      "category": "general"
-    },
-    {
       "id": "news-3",
-      "title": "NSBE National Convention Registration Open",
-      "content": "Register now for the NSBE National Convention! Join thousands of students and professionals for workshops, networking, and inspiration.",
-      "link": "#",
+      "title": "NSBE 2026 Annual Convention - March 18-22",
+      "content": "Join over 16,000 attendees in Baltimore for #NSBE2026: Advancing S.T.E.M. Registration opens in October! Experience workshops, career fair, networking, and professional development at the Baltimore Convention Center.",
+      "link": "https://convention.nsbe.org/",
       "date": "2025-10-10",
-      "category": "conferences"
-    },
-    {
-      "id": "news-4",
-      "title": "Robotics Competition Team Advances to Finals",
-      "content": "Our robotics team has qualified for the state finals! Join us in cheering them on at the championship next month.",
-      "link": "#",
-      "date": "2025-10-08",
-      "category": "competition"
-    },
-    {
-      "id": "news-5",
-      "title": "College Visit Day - Applications Open",
-      "content": "Applications are now open for our annual college visit day. Visit top engineering schools and meet with admissions representatives.",
-      "link": "#",
-      "date": "2025-10-08",
-      "category": "general"
-    },
-    {
-      "id": "news-6",
-      "title": "Regional Conference Early Bird Pricing",
-      "content": "Save on registration for the Region VI Fall Leadership Conference! Early bird pricing ends this week.",
-      "link": "#",
-      "date": "2025-10-05",
-      "category": "conferences"
-    },
-    {
-      "id": "news-7",
-      "title": "Scholarship Opportunity for Members",
-      "content": "A new scholarship program is available for active NSBE Jr. members. Applications due by the end of the month.",
-      "link": "#",
-      "date": "2025-10-05",
-      "category": "general"
-    },
-    {
-      "id": "news-8",
-      "title": "Community Service Project Success",
-      "content": "Thank you to everyone who participated in last weekend's community cleanup. Together we made a real difference!",
-      "link": "#",
-      "date": "2025-10-01",
-      "category": "general"
-    },
-    {
-      "id": "news-9",
-      "title": "Coding Challenge Winners Announced",
-      "content": "Congratulations to our top performers in the regional coding challenge! Their innovative solutions impressed the judges.",
-      "link": "#",
-      "date": "2025-09-28",
-      "category": "competition"
-    },
-    {
-      "id": "news-10",
-      "title": "National Conference Travel Fund Available",
-      "content": "Limited travel scholarships available for members attending the National NSBE Convention. Apply by October 20th.",
-      "link": "#",
-      "date": "2025-09-25",
-      "category": "conferences"
+      "category": "convention"
     }
   ]
 }
