@@ -5,7 +5,7 @@
       <div class="chapter-identity-section">
         <img src="@/assets/images/nsbe-jr-socal-logo.png" alt="NSBE Jr. Logo" class="chapter-logo" />
         <div class="chapter-text">
-          <div class="chapter-main-title">Region VI Southern California Chapter</div>
+          <!-- <div class="chapter-main-title">Region VI Southern California Chapter</div> -->
         </div>
         <img src="@/assets/images/nsbe-prof-logo.png" alt="NSBE Professionals Logo" class="partner-logo" />
       </div>
@@ -209,7 +209,7 @@ export default {
 
 .chapter-main-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.65rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   color: #2E7D32;
