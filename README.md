@@ -1,6 +1,6 @@
-# NSBE Jr. Chapter Website
+# NSBE Jr. Southern California Chapter Website
 
-A modern, responsive website for an NSBE Jr. Chapter built with Vue.js and Quasar Framework. This website features a clean design, easy navigation, and an announcements widget that can be integrated with a CMS.
+A modern, responsive website for the NSBE Jr. Southern California Chapter (Region VI) built with Vue.js and Quasar Framework. This website features a clean design, easy navigation, and dynamic news and events sections.
 
 ## Features
 
@@ -35,6 +35,41 @@ A modern, responsive website for an NSBE Jr. Chapter built with Vue.js and Quasa
 - **Build Tool:** Vite
 - **Routing:** Vue Router 4
 - **Styling:** Sass
+- **Data Management:** Static JSON files (see Design Decisions below)
+- **Deployment:** Cloudflare Pages
+
+## Design Decisions
+
+### Content Management Approach
+
+**Current Implementation:** Static JSON Files
+
+This website currently uses static JSON files (`src/data/events.json` and `src/data/news.json`) to manage news and events content. This approach was chosen for several key reasons:
+
+1. **Cost Effectiveness**: Eliminates monthly CMS subscription costs, keeping operational expenses minimal
+2. **Simplicity**: No database or backend infrastructure required
+3. **Performance**: Lightning-fast load times with static content
+4. **Version Control**: All content changes are tracked in Git
+5. **Zero Downtime**: No external service dependencies
+
+**Future Plans:** CMS Integration
+
+While the static file approach works well for initial deployment, the long-term goal is to integrate a Content Management System (CMS) such as:
+- Strapi (open source, self-hosted)
+- Contentful (cloud-based)
+- Sanity.io (cloud-based)
+- Supabase (already included in dependencies for future use)
+
+A CMS would provide:
+- User-friendly interface for non-technical staff to update content
+- Real-time content updates without code deployments
+- Image management and optimization
+- Content scheduling and workflow management
+- Multi-user access with role-based permissions
+
+**Migration Path**: The current data structure is designed to make CMS migration straightforward. The service layer (`src/services/`) abstracts data access, allowing a future switch from JSON files to API calls with minimal code changes.
+
+**Cost Considerations**: By starting with static files, the chapter can launch the website immediately at minimal cost, then migrate to a CMS when budget allows or when content update frequency justifies the investment.
 
 ## Getting Started
 
@@ -82,16 +117,24 @@ npm run preview
 
 ## Deployment
 
-This website is deployed using Cloudflare Pages, which provides automatic builds, continuous deployment, and global CDN hosting for static websites.
+This website is deployed using **Cloudflare Pages**, which provides:
+- Automatic builds from Git commits
+- Continuous deployment (main branch → production)
+- Global CDN hosting for fast worldwide access
+- Free SSL certificates
+- Zero-cost hosting for static sites
+
+The `wrangler.toml` file configures the Cloudflare Pages deployment settings.
 
 
 ## Project Structure
 
 ```
-nsbejr/
+nsbejrsocal/
 ├── index.html              # Main HTML file
 ├── package.json            # Project dependencies
-├── vite.config.js         # Vite configuration
+├── vite.config.ts         # Vite configuration
+├── wrangler.toml          # Cloudflare Pages configuration
 ├── src/
 │   ├── main.js            # Application entry point
 │   ├── App.vue            # Root component
@@ -100,19 +143,58 @@ nsbejr/
 │   │   └── index.js       # Route definitions
 │   ├── layouts/
 │   │   └── MainLayout.vue # Main layout with navigation
-│   └── pages/             # Page components
-│       ├── HomePage.vue
-│       ├── CalendarPage.vue
-│       ├── GalleryPage.vue
-│       ├── about/         # About section pages
-│       ├── programs/      # Programs section pages
-│       └── partnerships/  # Partnerships section pages
-└── public/                # Static assets
+│   ├── pages/             # Page components
+│   │   ├── HomePage.vue
+│   │   ├── EventsPage.vue
+│   │   ├── CalendarPage.vue
+│   │   ├── GalleryPage.vue
+│   │   ├── CompetitionsPage.vue
+│   │   ├── ConventionsPage.vue
+│   │   ├── PartnershipsPage.vue
+│   │   └── about/         # About section pages
+│   ├── components/        # Reusable components
+│   │   ├── NewsComponent.vue
+│   │   ├── EventsComponent.vue
+│   │   └── GalleryComponent.vue
+│   ├── data/              # Static data files (JSON)
+│   │   ├── news.json      # News and announcements
+│   │   ├── events.json    # Upcoming events
+│   │   ├── calendar.json  # Academic calendar
+│   │   ├── gallery.json   # Photo gallery metadata
+│   │   └── student-executives.json
+│   ├── services/          # Data access layer
+│   │   ├── NewsDataService.ts
+│   │   ├── EventsDataService.ts
+│   │   └── GalleryDataService.ts
+│   └── assets/            # Images and global styles
+└── public/                # Static assets (images, favicon)
 ```
 
-## Support
+## Updating Content
 
-For questions or issues with this website template, please contact your chapter's web administrator.
+### News and Events
+
+To add or update news and events:
+
+1. Edit the JSON files in `src/data/`:
+   - `news.json` - Add announcements, updates, competition news
+   - `events.json` - Add upcoming chapter events
+
+2. Follow the existing data structure for consistency
+
+3. Commit and push changes - Cloudflare Pages will automatically rebuild and deploy
+
+### Gallery
+
+To add photos to the gallery:
+
+1. Add images to `public/images/gallery/`
+2. Update `src/data/gallery.json` with the new image metadata
+3. Commit and deploy
+
+## Contributing
+
+This website was built for the NSBE Jr. Southern California Chapter. If you'd like to use this as a template for your chapter or contribute improvements, feel free to fork and adapt it to your needs.
 
 ## License
 
@@ -120,5 +202,6 @@ ISC
 
 ---
 
-Built with ❤️ for NSBE Jr. Chapter
+Built with ❤️ for NSBE Jr. Southern California Chapter - Region VI
+*Cultivating the Next Generation*
 
