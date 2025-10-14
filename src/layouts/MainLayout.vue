@@ -49,7 +49,8 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <q-btn v-if="$q.screen.lt.md" flat dense round icon="menu" @click="leftDrawerOpen = !leftDrawerOpen" />
+        <q-btn v-if="$q.screen.lt.md" flat dense round icon="menu" color="green-8"
+          @click="leftDrawerOpen = !leftDrawerOpen" />
       </q-toolbar>
     </q-header>
 
@@ -224,47 +225,62 @@ export default {
   color: #2E7D32;
 }
 
-/* Navigation Bar - Modern and Styled */
+/* Navigation Bar - Clean & Modern with Color */
 .navigation-bar {
-  background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
-  min-height: 56px;
+  background: linear-gradient(135deg, #F1F8F4 0%, #E8F5E9 100%);
+  min-height: 64px;
   justify-content: center;
-  border-top: 2px solid #388E3C;
+  border-bottom: 2px solid #C8E6C9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .desktop-menu {
   margin: 0 auto;
+  gap: 8px;
 }
 
 .desktop-menu .q-btn {
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: #1B5E20;
+  padding: 8px 20px;
+  border-radius: 10px;
   transition: all 0.3s ease;
+  text-transform: none;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdf9 100%);
+  border: 1.5px solid #C8E6C9;
   position: relative;
 }
 
-.desktop-menu .q-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #43A047;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
+/* Hover state - Medium green background */
 .desktop-menu .q-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+  color: #ffffff;
+  border-color: #4CAF50;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.35);
 }
 
-.desktop-menu .q-btn:hover::after {
-  width: 80%;
+/* Active/current page state */
+.desktop-menu .q-btn.router-link-active {
+  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+  color: #ffffff;
+  border-color: #2E7D32;
+  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.4);
 }
 
-.desktop-menu .q-btn.router-link-active::after {
-  width: 80%;
+.desktop-menu .q-btn.router-link-active:hover {
+  background: linear-gradient(135deg, #43A047 0%, #388E3C 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(56, 142, 60, 0.5);
+}
+
+/* Dropdown Button Styling */
+.desktop-menu .q-btn-dropdown__arrow {
+  color: currentColor;
+  transition: transform 0.3s ease;
 }
 
 /* Dropdown Menu Styling */
@@ -273,27 +289,71 @@ export default {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 4px;
 }
 
 .desktop-menu .q-item {
   padding: 12px 20px;
   transition: all 0.2s ease;
   color: #2C3E50 !important;
+  font-family: 'Raleway', sans-serif;
 }
 
 .desktop-menu .q-item:hover {
-  background: linear-gradient(135deg, #f0f7f1 0%, #e8f5e9 100%);
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
   padding-left: 24px;
+  color: #1B5E20 !important;
 }
 
 .desktop-menu .q-item-section {
-  color: #2C3E50 !important;
+  color: inherit !important;
   font-weight: 500;
   font-size: 0.95rem;
 }
 
 .desktop-menu .q-item .q-item-label {
-  color: #2C3E50 !important;
+  color: inherit !important;
+}
+
+/* Mobile Drawer Styling */
+.q-drawer .q-item {
+  font-family: 'Raleway', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.q-drawer .q-item:hover {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+}
+
+/* Mobile drawer active link - Green instead of blue */
+.q-drawer .q-item.q-router-link--active,
+.q-drawer .q-item--active {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  color: #2E7D32 !important;
+}
+
+.q-drawer .q-item.q-router-link--active .q-icon,
+.q-drawer .q-item--active .q-icon {
+  color: #388E3C !important;
+}
+
+.q-drawer .q-item.q-router-link--active .q-item-label,
+.q-drawer .q-item--active .q-item-label {
+  color: #2E7D32 !important;
+  font-weight: 600;
+}
+
+/* Mobile drawer expansion items */
+.q-drawer .q-expansion-item {
+  font-family: 'Raleway', sans-serif;
+}
+
+.q-drawer .q-expansion-item__toggle-icon {
+  color: #388E3C;
+}
+
+.q-drawer .q-expansion-item--active .q-expansion-item__toggle-icon {
+  color: #2E7D32;
 }
 
 /* Responsive adjustments */
