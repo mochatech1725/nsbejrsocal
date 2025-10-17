@@ -84,7 +84,7 @@ export default {
 
 .advisor-name {
   font-family: 'Raleway', sans-serif;
-  color: #2E7D32;
+  color: #212121;
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 6px;
