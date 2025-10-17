@@ -8,10 +8,10 @@
         <q-card flat bordered class="section-card">
           <q-card-section>
             <div class="row q-col-gutter-md">
-              <div v-for="advisor in advisors" :key="advisor.name" class="col-12 col-sm-6">
-                <div class="position-item">
-                  <span class="position-title">{{ advisor.title }}:</span>
-                  <span class="position-name">{{ advisor.name }}</span>
+              <div v-for="advisor in advisors" :key="advisor.name" class="col-12 col-sm-6 col-md-4">
+                <div class="advisor-card">
+                  <div class="advisor-name">{{ advisor.name }}</div>
+                  <div class="advisor-title">{{ advisor.title }}</div>
                 </div>
               </div>
             </div>
@@ -61,28 +61,44 @@ export default {
   margin: 0;
 }
 
-.position-item {
-  padding: 12px 16px;
-  border-left: 3px solid #388E3C;
+.advisor-card {
+  padding: 16px;
+  border: 2px solid #E8F5E9;
   background: #fafafa;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  transition: background 0.2s ease;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.position-item:hover {
+.advisor-card:hover {
   background: #f0f7f1;
+  border-color: #388E3C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.15);
 }
 
-.position-title {
-  font-weight: 600;
-  color: #388E3C;
-  margin-right: 8px;
-}
-
-.position-name {
+.advisor-name {
   font-family: 'Raleway', sans-serif;
-  color: #424242;
+  color: #2E7D32;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.advisor-title {
+  font-family: 'Raleway', sans-serif;
+  color: #388E3C;
   font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 </style>
