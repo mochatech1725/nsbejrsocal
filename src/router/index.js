@@ -11,6 +11,7 @@ const routes = [
 
             // About Us
             { path: '/about/about-nsbe', name: 'about-nsbe', component: () => import('../pages/about/AboutNsbePage.vue') },
+      { path: '/about/advisors', name: 'advisors', component: () => import('../pages/about/AdvisorsPage.vue') },
       { path: '/about/student-executive-board', name: 'executive-board', component: () => import('../pages/about/StudentExecutiveBoardPage.vue') },
 
       { path: '/events', name: 'events', component: () => import('../pages/EventsPage.vue') },

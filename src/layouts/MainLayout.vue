@@ -21,6 +21,9 @@
               <q-item clickable v-close-popup :to="{ name: 'about-nsbe' }">
                 <q-item-section>About NSBE</q-item-section>
               </q-item>
+              <q-item clickable v-close-popup :to="{ name: 'advisors' }">
+                <q-item-section>Advisors</q-item-section>
+              </q-item>
               <q-item clickable v-close-popup :to="{ name: 'executive-board' }">
                 <q-item-section>Student Executive Board</q-item-section>
               </q-item>
@@ -71,6 +74,9 @@
         <q-expansion-item label="About Us" icon="info">
           <q-item clickable :to="{ name: 'about-nsbe' }" v-close-popup>
             <q-item-section>About NSBE</q-item-section>
+          </q-item>
+          <q-item clickable :to="{ name: 'advisors' }" v-close-popup>
+            <q-item-section>Advisors</q-item-section>
           </q-item>
           <q-item clickable :to="{ name: 'executive-board' }" v-close-popup>
             <q-item-section>Student Executive Board</q-item-section>
