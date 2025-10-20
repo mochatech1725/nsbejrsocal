@@ -175,13 +175,15 @@ export default {
 
 <style scoped>
 .header-custom {
+  background: transparent !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Chapter Identity Section - Separate from Navigation */
 .chapter-identity-section {
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-  padding: 16px;
+  padding: 24px 16px 16px 16px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
